@@ -108,6 +108,7 @@ address a {
 
 .about-image img {
     border-radius: 150px;
+    box-shadow: 0 2px 2px #ccc;
     object-fit: scale-down;
     width: 70%;
 }
