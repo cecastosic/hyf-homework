@@ -70,6 +70,7 @@ address a {
 
 .container {
     background: #FBFBFB;
+    box-sizing:border-box;
     clear: both;
     float: left;
     margin: 15px;
