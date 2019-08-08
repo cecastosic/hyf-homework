@@ -70,7 +70,7 @@ address a {
 
 .container {
     background: #FBFBFB;
-    box-sizing:border-box;
+    box-sizing: border-box;
     clear: both;
     float: left;
     margin: 15px;
@@ -143,6 +143,20 @@ address a {
 }
 
 @media only screen and (max-width: 600px) {
+    html, body {
+        background: #fff;;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    .container {
+        border:10px solid rgba(3,111,157,1);
+        margin: 0;
+        padding: 5px;
+        width: 100%;
+    }
+
     .left {
         width: 100%;
     }
