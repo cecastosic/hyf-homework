@@ -199,7 +199,7 @@ footer .column a {
     }
 
     footer .column:nth-child(2) {
-        flex-basis: 200px;
+        flex-basis: 250px;
     }
 
     footer .column:nth-child(3) {
