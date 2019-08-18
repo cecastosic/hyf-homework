@@ -45,6 +45,10 @@ h5 {
     font-size: 1em;
 }
 
+p {
+    margin-top: 10px;
+}
+
 li {
     list-style: none;
 }
@@ -93,19 +97,20 @@ header span {
     align-items: stretch;
     flex-wrap: wrap;
     align-content: space-between;
-    padding: 3em 4em 3em 12.5em;
+    padding: 0 4em 0 12.5em;
 }
 
 article {
     flex: 2 1 420px;
     line-height: 1.4em;
-    margin-left:5.2em;
+    padding: 2.5em;
 }
 
 aside {
     flex: 1 1 215px;
     font-size: 0.8em;
     line-height: 1.4em;
+    padding: 3em 0;
 }
 
 .logos img {
@@ -123,18 +128,15 @@ footer {
     color: #f2f2f2;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     font-size: 1.2rem;
     line-height: 2rem;
     padding: 3em 0 6em 12em;
 }
 
 footer .column {
-    flex: 1 1 500px;
-    margin-right: 4.2em;
-}
-
-footer .column:last-child {
-    margin-right: 0;
+    flex: 1 1 200px;
+    padding: 1em;
 }
 
 footer .column a {
@@ -151,6 +153,7 @@ footer .column a {
 .nav li {
     border-bottom: 1px solid #6F45C5;
     padding: 0.8em 0;
+    max-width: 200px; /*same as flex-baseline*/
 }
 
 .archive p:first-of-type {
@@ -164,46 +167,36 @@ footer .column a {
     margin: 0.8em 0 0 1em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     h2, h3 {
         line-height: 1.2em;
-        margin-top: 1em;
+        margin-top: 0.5em;
     }
 
     header, .main-nav, .container, footer {
         padding: 1.6em 1.6em 1em;
     }
 
+    article {
+        padding: 0 0 1em;
+    }
+
+    aside {
+        flex-basis: 120px;
+        padding: 0;
+    }
+
     .main-nav ul {
         flex-direction: column;
-    }
-
-    article {
-        margin-left:0;
-    }
-     
-    aside {
-         flex-basis: 120px;
-    }
-
-    main section.container:nth-of-type(3) {
-        flex-direction: column-reverse;
     }
 
     .logos img {
         margin: 2em 1em 3em 0em;
     }
+  }
 
-    footer {
-        flex-direction: column;
+  @media only screen and (max-width: 600px) {
+    main section.container:nth-of-type(3) {
+        flex-direction: column-reverse;
     }
-
-    footer .column:nth-child(2) {
-        flex-basis: 250px;
-    }
-
-    footer .column:nth-child(3) {
-        flex-basis: 300px;
-    }
-
   }
