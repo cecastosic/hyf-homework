@@ -27,7 +27,7 @@
                     <h3>Progress</h3>
                     <progress value="1" max="5"></progress>
                     <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following: </p>
-                    <form action="">
+                    <form action="#">
                         <fieldset>
                             <legend>Tell us who you are?</legend>
                             <div class="block">
@@ -39,7 +39,7 @@
                             <div class="block">
                                 <label for="country">Country&#42;</label>
                                 <select id="country" name="country" class="form-control" required>
-                                    <option value=""></option>
+                                    <option value="">&nbsp;</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
                                     <option value="Albania">Albania</option>
@@ -290,13 +290,13 @@
                                 <label for="street">Street address&#42;</label>
                                 <input type="text" name="street" id="street" placeholder="" required>
                                 <label for="postcode">Post code&#42;</label>
-                                <input type="text" name="postcode" id="postcode" placeholder="" required maxlength="4">
+                                <input type="text" name="postcode" id="postcode" required maxlength="4" minlength="4" pattern="\d*">
                             </div>
                             <div class="block">
                                 <label for="description" class="desc">Profile description
                                     <span>Please provide a short description of yourself to be displayed on our social community pages. </span>
                                 </label>
-                                <textarea name="description" id="description" cols="30" rows="10" wrap="off" maxlength="500"></textarea>
+                                <textarea name="description" id="description" cols="30" rows="10" maxlength="500"></textarea>
                             </div>
                             <div>
                                 <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address. </p>
@@ -315,7 +315,7 @@
                                     <div class="block">
                                         <label for="country2">Country&#42;</label>
                                         <select id="country2" name="country2" class="form-control" required>
-                                            <option value=""></option>
+                                            <option value="">&nbsp;</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Åland Islands">Åland Islands</option>
                                             <option value="Albania">Albania</option>
@@ -566,11 +566,11 @@
                                         <label for="street2">Street address&#42;</label>
                                         <input type="text" name="street2" id="street2" required>
                                         <label for="postcode2">Post code&#42;</label>
-                                        <input type="number" name="postcode2" id="postcode2" required maxlength="4" minlength="4">
+                                        <input type="text" name="postcode2" id="postcode2" required maxlength="4" minlength="4" pattern="\d*">
                                     </div>
                                 </div>
                             </div>
-                            <input type="submit" value="Next step">
+                            <input type="submit" value="Next step" class="submit">
                         </fieldset>
                     </form>
 
@@ -591,14 +591,14 @@
                         <h3>Progress</h3>
                         <progress value="2" max="5"></progress>
                         <p>We will probably need to stay in touch somehow. Let is know how we can reach you?</p>
-                        <form action="">
+                        <form action="#">
                             <fieldset>
                                 <legend>How to stay in touch?</legend>
                                 <div class="block">
                                     <label for="email">Email&#42;</label>
                                 <input type="email" name="email" id="email" required pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$">
                                     <label for="phone">Phone</label>
-                                    <input type="phone" name="phone" id="phone" pattern="([+]?\d{1,2}[.-\s]?)?(\d{3}[.-]?){2}\d{4}" >
+                                    <input type="tel" name="phone" id="phone" pattern="([+]?\d{1,2}[.-\s]?)?(\d{3}[.-]?){2}\d{4}" >
                                 </div>
                                 <div class="block">
                                     <label for="password">Password&#42;</label>
@@ -606,7 +606,7 @@
                                 </div>
                                 <div class="block">
                                     <label for="repeat-password">Re-enter Password&#42;</label>
-                                    <input type="password" id="password" required minlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$" title="Minimum 10 characters, uppercase and lowercase letters">
+                                    <input type="password" id="repeat-password" required minlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$" title="Minimum 10 characters, uppercase and lowercase letters">
                                 </div>
                                 <p>I want to sign up for the newsletter</p>
                                 <div class="block">
@@ -617,7 +617,7 @@
                                     <label for="nonews">Don't send me news</label>
                                     <input type="radio" name="news" id="nonews">
                                 </div>
-                                <input type="submit" value="Next step">
+                                <input type="submit" value="Next step" class="submit">
                             </fieldset>
                         </form>
                     </div>
@@ -636,7 +636,7 @@
                         <h2>Step 3/4 - Time to learn about your preferences? </h2>
                         <h3>Progress</h3>
                         <progress value="3" max="5"></progress>
-                        <form action="">
+                        <form action="#">
                             <fieldset>
                                 <legend>Interests and style</legend>
                                 <p>What kind of items are you interested in offers on?</p>
@@ -705,7 +705,7 @@
                                 </div>           
                                                                                         
                                     
-                                <input type="submit" value="Next step">
+                                <input type="submit" value="Next step" class="submit">
 
                             </fieldset>
                         </form>
@@ -728,7 +728,7 @@
                     <h3>Progress</h3>
                     <progress value="4" max="5"></progress>
                     <p>Please fill in your payment data</p>
-                    <form action="">
+                    <form action="#">
                         <fieldset>
                             <legend>Your payment data</legend>
                             <div class="block">
@@ -738,7 +738,7 @@
                             <div class="block">
                                 <label for="cardtype">Card type&#42;</label>
                                 <select name="cardtype" id="cardtype" required>
-                                    <option value="" selected=""></option>
+                                    <option value="">&nbsp;</option>
                                     <option value="Mastercard">Mastercard</option>
                                     <option value="Visa">Visa</option>
                                     <option value="AmericanExpress">AmericanExpress</option>
@@ -746,12 +746,12 @@
                             </div>
                             <div class="block">
                                 <label for="creditcard">Credit card number&#42;</label>
-                                <input type="number" name="creditcard" id="creditcard" maxlength="16" minlength="16" pattern="[-+]?[0-9]" required>
+                                <input type="text" name="creditcard" id="creditcard" maxlength="16" minlength="16" pattern="[-+]?[0-9]" required>
                             </div>
                             <div class="block">
                                 <label for="expirymonth">Expiry month&#42;</label>
                                 <select id="expirymonth" required>
-                                    <option value=""></option>
+                                    <option value="">&nbsp;</option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
                                     <option value="03">03</option>
@@ -767,7 +767,7 @@
                                 </select>
                                 <label for="expiryyear">Expiry year&#42;</label>
                                 <select id="expiryyear" required>
-                                    <option value=""></option>
+                                    <option value="">&nbsp;</option>
                                     <option value="2019"> 2019</option>
                                     <option value="2020"> 2020</option>
                                     <option value="2021"> 2021</option>
@@ -778,9 +778,9 @@
                             </div>
                             <div class="block">
                                 <label for="ccv">CCV&#42;</label>
-                                <input type="number" name="ccv" id="ccv" pattern="^[0-9]{3,3}$" required>
+                                <input type="text" name="ccv" id="ccv" pattern="^[0-9]{3,3}$" required maxlength="3" minlength="3">
                             </div>
-                            <input type="submit" value="Next step">
+                            <input type="submit" value="Next step" class="submit">
 
                         </fieldset>
                     </form>

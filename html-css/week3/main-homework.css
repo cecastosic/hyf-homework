@@ -183,6 +183,18 @@ main {
     width: 12rem;
 }
 
+.submit {
+    background-color:#D7D7D7;
+    border: 1px solid #9a9a9a;
+    float: right;
+    font-size: 1.2em;
+    font-weight: 700;
+    height: 4em;
+    padding: 1em;
+    text-align: center;
+    width: 13em; 
+}
+
  /* Toggled State */
  input[type=checkbox]:checked ~ .shipping {
     display:none;
