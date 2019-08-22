@@ -57,7 +57,7 @@ header {
     background-color: #FAFAFA;
     border-bottom: 1px solid #efefef;
     color: #969696;
-    padding: 2.7em 12.5em 3.5em;
+    padding: 2.7em 5em 3.5em;
 }
 
 header span {
@@ -65,7 +65,7 @@ header span {
 }
 
 .main-nav {
-    padding: 1.6em 12.5em;
+    padding: 1.6em 5em;
 }
 
 .main-nav ul {
@@ -97,7 +97,7 @@ header span {
     align-items: stretch;
     flex-wrap: wrap;
     align-content: space-between;
-    padding: 0 4em 0 12.5em;
+    padding: 0 4em 0 5em;
 }
 
 article {
@@ -131,7 +131,7 @@ footer {
     flex-wrap: wrap;
     font-size: 1.2rem;
     line-height: 2rem;
-    padding: 3em 0 6em 12em;
+    padding: 3em 0 6em 5em;
 }
 
 footer .column {
@@ -191,7 +191,7 @@ footer .column a {
     }
 
     .logos img {
-        margin: 2em 1em 3em 0em;
+        margin: 2em 0.5em 3em 0em;
     }
   }
 
