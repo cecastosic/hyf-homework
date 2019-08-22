@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="main-homework.css">
     <title>Sign up to yourcustomtailor.com </title>
 </head>
+
 <body>
     <header>
         <div class="logo">Logo</div>
@@ -17,24 +19,30 @@
         <!--tabs should start here-->
         <div class="tabs">
             <!--start first step-->
-            <div class="tab"> 
+            <div class="tab">
                 <input type="radio" id="tab-1" name="tab-group-1" checked>
                 <label for="tab-1" class="tab-label">Step 1</label>
-                <div class="content">
-                    <p>We can't wait to help you improve your life-style and gain the attention from people around you! </p>
-                    <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about your first... </p>
+                <div class="content" id="step1">
+                    <p>We can't wait to help you improve your life-style and gain the attention from people around you!
+                    </p>
+                    <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking
+                        the best offers that match your preferences and style. Every week we will send you a hand-picked
+                        selection - we just need to know a few details about your first... </p>
                     <h2>Step 1/4 - tell us who you are? </h2>
                     <h3>Progress</h3>
-                    <progress value="1" max="5"></progress>
-                    <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following: </p>
-                    <form action="#">
+                    <div class="progress-container">
+                        <progress value="1" max="5"></progress>
+                    </div>
+                    <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:
+                    </p>
+                    <form action="#" id="form-step1">
                         <fieldset>
                             <legend>Tell us who you are?</legend>
                             <div class="block">
                                 <label for="firstname">First name&#42;</label>
-                                <input type="text" name="firstname" id="firstname" placeholder="" required>
+                                <input type="text" name="firstname" id="firstname" required>
                                 <label for="lastname">Last name&#42;</label>
-                                <input type="text" name="lastname" id="lastname" placeholder="" required>
+                                <input type="text" name="lastname" id="lastname" required>
                             </div>
                             <div class="block">
                                 <label for="country">Country&#42;</label>
@@ -71,7 +79,8 @@
                                     <option value="Botswana">Botswana</option>
                                     <option value="Bouvet Island">Bouvet Island</option>
                                     <option value="Brazil">Brazil</option>
-                                    <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                    <option value="British Indian Ocean Territory">British Indian Ocean Territory
+                                    </option>
                                     <option value="Brunei Darussalam">Brunei Darussalam</option>
                                     <option value="Bulgaria">Bulgaria</option>
                                     <option value="Burkina Faso">Burkina Faso</option>
@@ -90,7 +99,8 @@
                                     <option value="Colombia">Colombia</option>
                                     <option value="Comoros">Comoros</option>
                                     <option value="Congo">Congo</option>
-                                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic
+                                        of The</option>
                                     <option value="Cook Islands">Cook Islands</option>
                                     <option value="Costa Rica">Costa Rica</option>
                                     <option value="Cote D'ivoire">Cote D'ivoire</option>
@@ -134,7 +144,8 @@
                                     <option value="Guinea-bissau">Guinea-bissau</option>
                                     <option value="Guyana">Guyana</option>
                                     <option value="Haiti">Haiti</option>
-                                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands
+                                    </option>
                                     <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
                                     <option value="Honduras">Honduras</option>
                                     <option value="Hong Kong">Hong Kong</option>
@@ -155,11 +166,13 @@
                                     <option value="Kazakhstan">Kazakhstan</option>
                                     <option value="Kenya">Kenya</option>
                                     <option value="Kiribati">Kiribati</option>
-                                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's
+                                        Republic of</option>
                                     <option value="Korea, Republic of">Korea, Republic of</option>
                                     <option value="Kuwait">Kuwait</option>
                                     <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic
+                                    </option>
                                     <option value="Latvia">Latvia</option>
                                     <option value="Lebanon">Lebanon</option>
                                     <option value="Lesotho">Lesotho</option>
@@ -169,7 +182,8 @@
                                     <option value="Lithuania">Lithuania</option>
                                     <option value="Luxembourg">Luxembourg</option>
                                     <option value="Macao">Macao</option>
-                                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former
+                                        Yugoslav Republic of</option>
                                     <option value="Madagascar">Madagascar</option>
                                     <option value="Malawi">Malawi</option>
                                     <option value="Malaysia">Malaysia</option>
@@ -182,7 +196,8 @@
                                     <option value="Mauritius">Mauritius</option>
                                     <option value="Mayotte">Mayotte</option>
                                     <option value="Mexico">Mexico</option>
-                                    <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                    <option value="Micronesia, Federated States of">Micronesia, Federated States of
+                                    </option>
                                     <option value="Moldova, Republic of">Moldova, Republic of</option>
                                     <option value="Monaco">Monaco</option>
                                     <option value="Mongolia">Mongolia</option>
@@ -208,7 +223,8 @@
                                     <option value="Oman">Oman</option>
                                     <option value="Pakistan">Pakistan</option>
                                     <option value="Palau">Palau</option>
-                                    <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                    <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied
+                                    </option>
                                     <option value="Panama">Panama</option>
                                     <option value="Papua New Guinea">Papua New Guinea</option>
                                     <option value="Paraguay">Paraguay</option>
@@ -227,7 +243,8 @@
                                     <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
                                     <option value="Saint Lucia">Saint Lucia</option>
                                     <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines
+                                    </option>
                                     <option value="Samoa">Samoa</option>
                                     <option value="San Marino">San Marino</option>
                                     <option value="Sao Tome and Principe">Sao Tome and Principe</option>
@@ -242,7 +259,8 @@
                                     <option value="Solomon Islands">Solomon Islands</option>
                                     <option value="Somalia">Somalia</option>
                                     <option value="South Africa">South Africa</option>
-                                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The
+                                        South Sandwich Islands</option>
                                     <option value="Spain">Spain</option>
                                     <option value="Sri Lanka">Sri Lanka</option>
                                     <option value="Sudan">Sudan</option>
@@ -271,7 +289,8 @@
                                     <option value="United Arab Emirates">United Arab Emirates</option>
                                     <option value="United Kingdom">United Kingdom</option>
                                     <option value="United States">United States</option>
-                                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                    <option value="United States Minor Outlying Islands">United States Minor Outlying
+                                        Islands</option>
                                     <option value="Uruguay">Uruguay</option>
                                     <option value="Uzbekistan">Uzbekistan</option>
                                     <option value="Vanuatu">Vanuatu</option>
@@ -288,18 +307,22 @@
                             </div>
                             <div class="block">
                                 <label for="street">Street address&#42;</label>
-                                <input type="text" name="street" id="street" placeholder="" required>
+                                <input type="text" name="street" id="street" required>
                                 <label for="postcode">Post code&#42;</label>
-                                <input type="text" name="postcode" id="postcode" required maxlength="4" minlength="4" pattern="\d*">
+                                <input type="text" name="postcode" id="postcode" required maxlength="4" minlength="4"
+                                    pattern="\d*" title="Enter 4 digits">
                             </div>
                             <div class="block">
                                 <label for="description" class="desc">Profile description
-                                    <span>Please provide a short description of yourself to be displayed on our social community pages. </span>
+                                    <span>Please provide a short description of yourself to be displayed on our social
+                                        community pages. </span>
                                 </label>
-                                <textarea name="description" id="description" cols="30" rows="10" maxlength="500"></textarea>
+                                <textarea name="description" id="description" cols="30" rows="10"
+                                    maxlength="500"></textarea>
                             </div>
                             <div>
-                                <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address. </p>
+                                <p>Use the same address for billing and shipping? Uncheck below to fill out a separate
+                                    shipping address. </p>
                             </div>
                             <div class="block">
                                 <label for="shipping">Shipping address</label>
@@ -308,13 +331,13 @@
                                     <h3>Shipping address</h3>
                                     <div class="block">
                                         <label for="firstname2">First name&#42;</label>
-                                        <input type="text" name="firstname2" id="firstname2" required>
+                                        <input type="text" name="firstname2" id="firstname2">
                                         <label for="lastname2">Last name&#42;</label>
-                                        <input type="text" name="lastname2" id="lastname2" required>
+                                        <input type="text" name="lastname2" id="lastname2">
                                     </div>
                                     <div class="block">
                                         <label for="country2">Country&#42;</label>
-                                        <select id="country2" name="country2" class="form-control" required>
+                                        <select id="country2" name="country2" class="form-control">
                                             <option value="">&nbsp;</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Åland Islands">Åland Islands</option>
@@ -347,7 +370,8 @@
                                             <option value="Botswana">Botswana</option>
                                             <option value="Bouvet Island">Bouvet Island</option>
                                             <option value="Brazil">Brazil</option>
-                                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                            <option value="British Indian Ocean Territory">British Indian Ocean
+                                                Territory</option>
                                             <option value="Brunei Darussalam">Brunei Darussalam</option>
                                             <option value="Bulgaria">Bulgaria</option>
                                             <option value="Burkina Faso">Burkina Faso</option>
@@ -366,7 +390,8 @@
                                             <option value="Colombia">Colombia</option>
                                             <option value="Comoros">Comoros</option>
                                             <option value="Congo">Congo</option>
-                                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic
+                                                Republic of The</option>
                                             <option value="Cook Islands">Cook Islands</option>
                                             <option value="Costa Rica">Costa Rica</option>
                                             <option value="Cote D'ivoire">Cote D'ivoire</option>
@@ -385,14 +410,16 @@
                                             <option value="Eritrea">Eritrea</option>
                                             <option value="Estonia">Estonia</option>
                                             <option value="Ethiopia">Ethiopia</option>
-                                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)
+                                            </option>
                                             <option value="Faroe Islands">Faroe Islands</option>
                                             <option value="Fiji">Fiji</option>
                                             <option value="Finland">Finland</option>
                                             <option value="France">France</option>
                                             <option value="French Guiana">French Guiana</option>
                                             <option value="French Polynesia">French Polynesia</option>
-                                            <option value="French Southern Territories">French Southern Territories</option>
+                                            <option value="French Southern Territories">French Southern Territories
+                                            </option>
                                             <option value="Gabon">Gabon</option>
                                             <option value="Gambia">Gambia</option>
                                             <option value="Georgia">Georgia</option>
@@ -410,8 +437,10 @@
                                             <option value="Guinea-bissau">Guinea-bissau</option>
                                             <option value="Guyana">Guyana</option>
                                             <option value="Haiti">Haiti</option>
-                                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald
+                                                Islands</option>
+                                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)
+                                            </option>
                                             <option value="Honduras">Honduras</option>
                                             <option value="Hong Kong">Hong Kong</option>
                                             <option value="Hungary">Hungary</option>
@@ -431,11 +460,13 @@
                                             <option value="Kazakhstan">Kazakhstan</option>
                                             <option value="Kenya">Kenya</option>
                                             <option value="Kiribati">Kiribati</option>
-                                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                            <option value="Korea, Democratic People's Republic of">Korea, Democratic
+                                                People's Republic of</option>
                                             <option value="Korea, Republic of">Korea, Republic of</option>
                                             <option value="Kuwait">Kuwait</option>
                                             <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                            <option value="Lao People's Democratic Republic">Lao People's Democratic
+                                                Republic</option>
                                             <option value="Latvia">Latvia</option>
                                             <option value="Lebanon">Lebanon</option>
                                             <option value="Lesotho">Lesotho</option>
@@ -445,7 +476,8 @@
                                             <option value="Lithuania">Lithuania</option>
                                             <option value="Luxembourg">Luxembourg</option>
                                             <option value="Macao">Macao</option>
-                                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The
+                                                Former Yugoslav Republic of</option>
                                             <option value="Madagascar">Madagascar</option>
                                             <option value="Malawi">Malawi</option>
                                             <option value="Malaysia">Malaysia</option>
@@ -458,7 +490,8 @@
                                             <option value="Mauritius">Mauritius</option>
                                             <option value="Mayotte">Mayotte</option>
                                             <option value="Mexico">Mexico</option>
-                                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                            <option value="Micronesia, Federated States of">Micronesia, Federated States
+                                                of</option>
                                             <option value="Moldova, Republic of">Moldova, Republic of</option>
                                             <option value="Monaco">Monaco</option>
                                             <option value="Mongolia">Mongolia</option>
@@ -484,7 +517,8 @@
                                             <option value="Oman">Oman</option>
                                             <option value="Pakistan">Pakistan</option>
                                             <option value="Palau">Palau</option>
-                                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                            <option value="Palestinian Territory, Occupied">Palestinian Territory,
+                                                Occupied</option>
                                             <option value="Panama">Panama</option>
                                             <option value="Papua New Guinea">Papua New Guinea</option>
                                             <option value="Paraguay">Paraguay</option>
@@ -503,7 +537,8 @@
                                             <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
                                             <option value="Saint Lucia">Saint Lucia</option>
                                             <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The
+                                                Grenadines</option>
                                             <option value="Samoa">Samoa</option>
                                             <option value="San Marino">San Marino</option>
                                             <option value="Sao Tome and Principe">Sao Tome and Principe</option>
@@ -518,7 +553,8 @@
                                             <option value="Solomon Islands">Solomon Islands</option>
                                             <option value="Somalia">Somalia</option>
                                             <option value="South Africa">South Africa</option>
-                                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                            <option value="South Georgia and The South Sandwich Islands">South Georgia
+                                                and The South Sandwich Islands</option>
                                             <option value="Spain">Spain</option>
                                             <option value="Sri Lanka">Sri Lanka</option>
                                             <option value="Sudan">Sudan</option>
@@ -530,7 +566,8 @@
                                             <option value="Syrian Arab Republic">Syrian Arab Republic</option>
                                             <option value="Taiwan, Province of China">Taiwan, Province of China</option>
                                             <option value="Tajikistan">Tajikistan</option>
-                                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                            <option value="Tanzania, United Republic of">Tanzania, United Republic of
+                                            </option>
                                             <option value="Thailand">Thailand</option>
                                             <option value="Timor-leste">Timor-leste</option>
                                             <option value="Togo">Togo</option>
@@ -547,7 +584,8 @@
                                             <option value="United Arab Emirates">United Arab Emirates</option>
                                             <option value="United Kingdom">United Kingdom</option>
                                             <option value="United States">United States</option>
-                                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                            <option value="United States Minor Outlying Islands">United States Minor
+                                                Outlying Islands</option>
                                             <option value="Uruguay">Uruguay</option>
                                             <option value="Uzbekistan">Uzbekistan</option>
                                             <option value="Vanuatu">Vanuatu</option>
@@ -564,169 +602,156 @@
                                     </div>
                                     <div class="block">
                                         <label for="street2">Street address&#42;</label>
-                                        <input type="text" name="street2" id="street2" required>
+                                        <input type="text" name="street2" id="street2">
                                         <label for="postcode2">Post code&#42;</label>
-                                        <input type="text" name="postcode2" id="postcode2" required maxlength="4" minlength="4" pattern="\d*">
+                                        <input type="text" name="postcode2" id="postcode2" maxlength="4"
+                                            minlength="4" pattern="\d*" title="Enter 4 digits">
                                     </div>
                                 </div>
                             </div>
-                            <input type="submit" value="Next step" class="submit">
+                            <input type="submit" value="Next step" class="submit" onclick="return showContent2()">
                         </fieldset>
                     </form>
-
-
-
                 </div>
-
-            </div>  
+            </div>
             <!--end first step-->
-
-
             <!--start second step-->
-            <div class="tab"> 
-                    <input type="radio" id="tab-2" name="tab-group-1">
-                    <label for="tab-2" class="tab-label">Step 2</label>
-                    <div class="content">
-                        <h2>Step 2/4 - how can we reach you? </h2>
-                        <h3>Progress</h3>
+            <div class="tab">
+                <input type="radio" id="tab-2" name="tab-group-1">
+                <label for="tab-2" class="tab-label">Step 2</label>
+                <div class="content" id="step2">
+                    <h2>Step 2/4 - how can we reach you? </h2>
+                    <h3>Progress</h3>
+                    <div class="progress-container">
                         <progress value="2" max="5"></progress>
-                        <p>We will probably need to stay in touch somehow. Let is know how we can reach you?</p>
-                        <form action="#">
-                            <fieldset>
-                                <legend>How to stay in touch?</legend>
-                                <div class="block">
-                                    <label for="email">Email&#42;</label>
-                                <input type="email" name="email" id="email" required pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$">
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" name="phone" id="phone" pattern="([+]?\d{1,2}[.-\s]?)?(\d{3}[.-]?){2}\d{4}" >
-                                </div>
-                                <div class="block">
-                                    <label for="password">Password&#42;</label>
-                                    <input type="password" id="password" required minlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$" title="Minimum 10 characters, uppercase and lowercase letters">
-                                </div>
-                                <div class="block">
-                                    <label for="repeat-password">Re-enter Password&#42;</label>
-                                    <input type="password" id="repeat-password" required minlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$" title="Minimum 10 characters, uppercase and lowercase letters">
-                                </div>
-                                <p>I want to sign up for the newsletter</p>
-                                <div class="block">
-                                    <label for="weekly">Weekly news</label>
-                                    <input type="radio" name="news" id="weekly" checked>
-                                    <label for="monthly">Monthly news</label>
-                                    <input type="radio" name="news" id="monthly">
-                                    <label for="nonews">Don't send me news</label>
-                                    <input type="radio" name="news" id="nonews">
-                                </div>
-                                <input type="submit" value="Next step" class="submit">
-                            </fieldset>
-                        </form>
                     </div>
+                    <p>We will probably need to stay in touch somehow. Let is know how we can reach you?</p>
+                    <form action="#" id="form-step2">
+                        <fieldset>
+                            <legend>How to stay in touch?</legend>
+                            <div class="block">
+                                <label for="email">Email&#42;</label>
+                                <input type="email" name="email" id="email" required
+                                    pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$">
+                                <label for="phone">Phone</label>
+                                <input type="tel" name="phone" id="phone" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" title="Format +45XXXXXXXX">
+                            </div>
+                            <div class="block">
+                                <label for="password">Password&#42;</label>
+                                <input type="password" id="password" required minlength="10"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$"
+                                    title="Minimum 10 characters, uppercase and lowercase letters">
+                            </div>
+                            <div class="block">
+                                <label for="repeat-password">Re-enter Password&#42;</label>
+                                <input type="password" id="repeat-password" required minlength="10"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$"
+                                    title="Minimum 10 characters, uppercase and lowercase letters">
+                            </div>
+                            <p>I want to sign up for the newsletter</p>
+                            <div class="block">
+                                <label for="weekly">Weekly news</label>
+                                <input type="radio" name="news" id="weekly" checked>
+                                <label for="monthly">Monthly news</label>
+                                <input type="radio" name="news" id="monthly">
+                                <label for="nonews">Don't send me news</label>
+                                <input type="radio" name="news" id="nonews">
+                            </div>
+                            <input type="submit" value="Next step" class="submit" onclick="return showContent3()">
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-
-
             <!--end second step-->
-
-
-
             <!--start third step-->
-            <div class="tab"> 
-                    <input type="radio" id="tab-3" name="tab-group-1">
-                    <label for="tab-3" class="tab-label">Step 3</label>
-                    <div class="content">
-                        <h2>Step 3/4 - Time to learn about your preferences? </h2>
-                        <h3>Progress</h3>
+            <div class="tab">
+                <input type="radio" id="tab-3" name="tab-group-1">
+                <label for="tab-3" class="tab-label">Step 3</label>
+                <div class="content" id="step3">
+                    <h2>Step 3/4 - Time to learn about your preferences? </h2>
+                    <h3>Progress</h3>
+                    <div class="progress-container">
                         <progress value="3" max="5"></progress>
-                        <form action="#">
-                            <fieldset>
-                                <legend>Interests and style</legend>
-                                <p>What kind of items are you interested in offers on?</p>
-                                <div class="block">
-                                    <label for="apparal">Apparal</label>
-                                    <input type="checkbox" name="apparal" id="apparal" checked>
-                                    <label for="jewelry">Jewelry</label>
-                                    <input type="checkbox" name="jewelry" id="jewelry" checked>
-                                </div>
-                                <div class="block">
-                                    <label for="accessories">Accessories</label>
-                                    <input type="checkbox" name="accessories" id="accessories" checked>
-                                    <label for="shoes">Shoes</label>   
-                                    <input type="checkbox" name="shoes" id="shoes" checked>                              
-                                </div>
-                                <div class="block">
-                                    <label for="handbags">Handbags</label>
-                                    <input type="checkbox" name="handbags" id="handbags">
-                                </div>
-                                <p>Choose the images that best resemble your style </p>
-                                <div class="block style">
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select1">Select</label>
-                                        <input type="checkbox" name="select1" id="select1" checked>
-                                    </div>
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select2">Select</label>
-                                        <input type="checkbox" name="select2" id="select2">
-                                    </div>
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select3">Select</label>
-                                        <input type="checkbox" name="select3" id="select3" checked>
-                                    </div>
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select4">Select</label>
-                                        <input type="checkbox" name="select4" id="select4" checked>
-                                    </div>
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select5">Select</label>
-                                        <input type="checkbox" name="select5" id="select5">
-                                    </div>
-                                
-                                
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select6">Select</label>
-                                        <input type="checkbox" name="select6" id="select6">
-                                    </div>
-                                
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select7">Select</label>
-                                        <input type="checkbox" name="select7" id="select7" checked>
-                                    </div>
-                                
-                                    <div class="col">
-                                        <div class="placeholder"></div>
-                                        <label for="select8">Select</label>
-                                        <input type="checkbox" name="select8" id="select8" checked>
-                                    </div>
-                                </div>           
-                                                                                        
-                                    
-                                <input type="submit" value="Next step" class="submit">
-
-                            </fieldset>
-                        </form>
-
                     </div>
+                    <form action="#" id="form-step3">
+                        <fieldset>
+                            <legend>Interests and style</legend>
+                            <p>What kind of items are you interested in offers on?</p>
+                            <div class="block">
+                                <label for="apparal">Apparal</label>
+                                <input type="checkbox" name="apparal" id="apparal" checked>
+                                <label for="jewelry">Jewelry</label>
+                                <input type="checkbox" name="jewelry" id="jewelry" checked>
+                            </div>
+                            <div class="block">
+                                <label for="accessories">Accessories</label>
+                                <input type="checkbox" name="accessories" id="accessories" checked>
+                                <label for="shoes">Shoes</label>
+                                <input type="checkbox" name="shoes" id="shoes" checked>
+                            </div>
+                            <div class="block">
+                                <label for="handbags">Handbags</label>
+                                <input type="checkbox" name="handbags" id="handbags">
+                            </div>
+                            <p>Choose the images that best resemble your style </p>
+                            <div class="block style">
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select1">Select</label>
+                                    <input type="checkbox" name="select1" id="select1" checked>
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select2">Select</label>
+                                    <input type="checkbox" name="select2" id="select2">
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select3">Select</label>
+                                    <input type="checkbox" name="select3" id="select3" checked>
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select4">Select</label>
+                                    <input type="checkbox" name="select4" id="select4" checked>
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select5">Select</label>
+                                    <input type="checkbox" name="select5" id="select5">
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select6">Select</label>
+                                    <input type="checkbox" name="select6" id="select6">
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select7">Select</label>
+                                    <input type="checkbox" name="select7" id="select7" checked>
+                                </div>
+                                <div class="col">
+                                    <div class="placeholder"></div>
+                                    <label for="select8">Select</label>
+                                    <input type="checkbox" name="select8" id="select8" checked>
+                                </div>
+                            </div>
+                            <input type="submit" value="Next step" class="submit" onclick="return showContent4()">
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-
-
             <!--end third step-->
-
-
-
-
             <!--start fourth step-->
-            <div class="tab"> 
+            <div class="tab">
                 <input type="radio" id="tab-4" name="tab-group-1">
                 <label for="tab-4" class="tab-label">Step 4</label>
-                <div class="content">
-                    <h2>Step 4/4 - Payment  </h2>
+                <div class="content" id="step4">
+                    <h2>Step 4/4 - Payment </h2>
                     <h3>Progress</h3>
-                    <progress value="4" max="5"></progress>
+                    <div class="progress-container">
+                        <progress value="4" max="5"></progress>
+                    </div>
                     <p>Please fill in your payment data</p>
                     <form action="#">
                         <fieldset>
@@ -734,7 +759,7 @@
                             <div class="block">
                                 <label for="name">Name on card&#42;</label>
                                 <input type="text" name="name" id="name" required>
-                            </div> 
+                            </div>
                             <div class="block">
                                 <label for="cardtype">Card type&#42;</label>
                                 <select name="cardtype" id="cardtype" required>
@@ -746,7 +771,9 @@
                             </div>
                             <div class="block">
                                 <label for="creditcard">Credit card number&#42;</label>
-                                <input type="text" name="creditcard" id="creditcard" maxlength="16" minlength="16" pattern="[-+]?[0-9]" required>
+                                <input type="text" name="creditcard" id="creditcard" maxlength="16" minlength="16"
+                                    pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" required
+                                    title="Only numbers allowed. Exactly 16 digits.">
                             </div>
                             <div class="block">
                                 <label for="expirymonth">Expiry month&#42;</label>
@@ -778,19 +805,52 @@
                             </div>
                             <div class="block">
                                 <label for="ccv">CCV&#42;</label>
-                                <input type="text" name="ccv" id="ccv" pattern="^[0-9]{3,3}$" required maxlength="3" minlength="3">
+                                <input type="text" name="ccv" id="ccv" pattern="^[0-9]{3,3}$" required maxlength="3"
+                                    minlength="3" title="Only numbers. Exactly 3 digits.">
                             </div>
                             <input type="submit" value="Next step" class="submit">
-
                         </fieldset>
                     </form>
                 </div>
             </div>
-
-
             <!--end fourth step-->
         </div>
     </main>
-</body>
-</html>
 
+    <script>
+        function showContent2() {
+          if(document.getElementById("shipping").checked === false) {
+              document.getElementById("firstname2").required = true;
+              document.getElementById("lastname2").required = true;
+              document.getElementById("country2").required = true;
+              document.getElementById("street2").required = true;
+              document.getElementById("postcode2").required = true;
+
+           }
+                
+            if(document.getElementById("form-step1").checkValidity()) {
+                document.getElementById("tab-2").checked = true;
+                return false;
+            }
+                
+
+        }
+
+        function showContent3() {
+            if(document.getElementById("form-step2").checkValidity()) {
+                document.getElementById("tab-3").checked = true;
+                return false;
+            }
+        }
+
+        function showContent4() {
+            if(document.getElementById("form-step3").checkValidity()) {
+                document.getElementById("tab-4").checked = true;
+                return false;
+            }
+        }
+    
+    </script>
+</body>
+
+</html>
