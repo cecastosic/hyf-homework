@@ -819,21 +819,26 @@
 
     <script>
         function showContent2() {
-          if(document.getElementById("shipping").checked === false) {
-              document.getElementById("firstname2").required = true;
-              document.getElementById("lastname2").required = true;
-              document.getElementById("country2").required = true;
-              document.getElementById("street2").required = true;
-              document.getElementById("postcode2").required = true;
-
-           }
+            var shippingCheck = document.getElementById("shipping").checked;
+            if(shippingCheck === false) {
+                document.getElementById("firstname2").required = true;
+                document.getElementById("lastname2").required = true;
+                document.getElementById("country2").required = true;
+                document.getElementById("street2").required = true;
+                document.getElementById("postcode2").required = true;
+            }
+            else {
+                document.getElementById("firstname2").required = false;
+                document.getElementById("lastname2").required = false;
+                document.getElementById("country2").required = false;
+                document.getElementById("street2").required = false;
+                document.getElementById("postcode2").required = false;
+            }
                 
             if(document.getElementById("form-step1").checkValidity()) {
                 document.getElementById("tab-2").checked = true;
                 return false;
             }
-                
-
         }
 
         function showContent3() {
