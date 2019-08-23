@@ -220,6 +220,7 @@ main {
 .submit {
     background-color: #D7D7D7;
     border: 1px solid #9a9a9a;
+    border-radius:0;
     float: right;
     font-size: 1.2em;
     font-weight: 700;
