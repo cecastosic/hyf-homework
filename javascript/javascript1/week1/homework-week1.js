@@ -29,27 +29,27 @@ const gardenSizeInM2 = [100,70];
 const housePricePeter = volumeInMeters[0] * 2.5 * 1000 + gardenSizeInM2[0] * 300;
 const housePriceJulia = volumeInMeters[1] * 2.5 * 1000 + gardenSizeInM2[1] * 300;
 
-if (housePricePeter > 2500000) {
+if (housePricePeter < 2500000) {
     console.log("House is too expensive, Peter");
 }
 else {
     console.log("Great price for the house, Peter");
-};
+}
 
-if (housePriceJulia > 1000000) {
+if (housePriceJulia < 1000000) {
     console.log("House is too expensive, Julia");
 }
 else {
     console.log("Great price for the house, Julia");
-};
+}
 
 
 //Ez Namey (Startup name generator) Optional
 let firstWords = ["Easy", "Awesome", "Corporate", "Friendly", "Fancy", "Bright", "Gigantic", "Great", "Charming", "Cooperative"];
 let secondWords = ["Association", "Creation", "Society", "Hub", "Start-up", "Settlement", "Charity", "Organization", "Corporation", "Institute"];
 
-let randomNumber1 = Math.floor(Math.random() * 10) + 0;
-let randomNumber2 = Math.floor(Math.random() * 10) + 0;
+let randomNumber1 = Math.floor(Math.random() * 10);
+let randomNumber2 = Math.floor(Math.random() * 10);
 
 let startupName = firstWords[randomNumber1] + " " + secondWords[randomNumber2];
 
