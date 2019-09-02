@@ -46,13 +46,13 @@ else {
 
 
 //Ez Namey (Startup name generator) Optional
-let firstWords = ["Easy", "Awesome", "Corporate", "Friendly", "Fancy", "Bright", "Gigantic", "Great", "Charming", "Cooperative"];
-let secondWords = ["Association", "Creation", "Society", "Hub", "Start-up", "Settlement", "Charity", "Organization", "Corporation", "Institute"];
+const firstWords = ["Easy", "Awesome", "Corporate", "Friendly", "Fancy", "Bright", "Gigantic", "Great", "Charming", "Cooperative"];
+const secondWords = ["Association", "Creation", "Society", "Hub", "Start-up", "Settlement", "Charity", "Organization", "Corporation", "Institute"];
 
-let randomNumber1 = Math.floor(Math.random() * 10);
-let randomNumber2 = Math.floor(Math.random() * 10);
+const randomNumber1 = Math.floor(Math.random() * 10);
+const randomNumber2 = Math.floor(Math.random() * 10);
 
-let startupName = firstWords[randomNumber1] + " " + secondWords[randomNumber2];
+const startupName = firstWords[randomNumber1] + " " + secondWords[randomNumber2];
 
 const resultStartup = "The startup: " + startupName + " contains " + startupName.length + " characters.";
 
