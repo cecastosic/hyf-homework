@@ -87,13 +87,13 @@ console.log(clothesToWear);
 
 const class07Students = [];
 function addStudentToClass(studentName) {
-  if(class07Students.includes(studentName)) {
+  if (!studentName) {
+    return "Please enter a name";
+  }
+  else if(class07Students.includes(studentName)) {
     return `Student ${studentName} is already in the class`;
   }
-  else if(studentName==="Queen") {
-    class07Students.push(studentName);
-  }
-  else if(class07Students.length<=5 && studentName) { 
+  else if(studentName==="Queen" || class07Students.length<=5) {
     class07Students.push(studentName);
   }
   else {
