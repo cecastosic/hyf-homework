@@ -7,9 +7,7 @@ function getFullname(firstname, surname, useFormalName) {
   else if (useFormalName) {
       return `Lord ${firstname} ${surname}`;
   }
-  else {
-      return `${firstname} ${surname}`;
-  }
+  return `${firstname} ${surname}`;
 }
 
 
@@ -74,10 +72,7 @@ function whatToWear(temperature) {
   else if (temperature<=36) {
     return "Go to a beach and take a swimming shorts";
   }
-  else {
-    return "Only underwear but put SPF";
-  }
-
+  return "Only underwear but put SPF";
 }
 const clothesToWear = whatToWear(41);
 console.log(clothesToWear);
