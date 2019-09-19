@@ -26,29 +26,25 @@ const myPlaylist = [];
 
 //Should this function return anything? What do you think, why/why not?
 //No, nothing should be returned, since this function is used just for push an item to the array.
-function addSongToDatabase(song) {
-    if (typeof (song) === 'object' && song !== null && song.songId && song.title && song.artist) {
-        songDatabase.push(song);
+function addSongToDatabase(title, artist) {
+    if (typeof (title) === 'string' && typeof (artist) === 'string' && title && artist) {
+        songDatabase.push({
+            songId: songDatabase.length + 1,
+            title: title,
+            artist: artist
+        });
     }
 }
 
 // should songId be plus 1 of the latest?
 
-addSongToDatabase({
-    songId: 5,
-    title: 'Enter Sandman',
-    artist: 'Metallica',
-});
-addSongToDatabase({
-    songId: 6,
-    title: 'Aces High',
-    artist: 'Iron Maiden',
-});
-addSongToDatabase("Metallica");
-addSongToDatabase(null);
-addSongToDatabase({});
+addSongToDatabase('Enter Sandman','Metallica');
+addSongToDatabase('Aces High','Iron Maiden');
+addSongToDatabase('Metallica');
+addSongToDatabase(null, null);
+addSongToDatabase("", "");
 
-console.log(songDatabase);
+console.table(songDatabase);
 
 
 //Searching for a song
@@ -68,7 +64,7 @@ console.log(searchedSong); // returns { songId: 4, title: 'When is enough too li
 const searchedSong2 = getSongByTitle('When is enough too');
 console.log(searchedSong2); // returns undefined
 
-//Optional: Add fuzzy search, so we can search for "When enough to little?" and still get the song with id 4.
+//Optional: Add fuzzy search, so we can search for 'When enough to little?' and still get the song with id 4.
 function getSongByTitleFuzzy(title) {
     for (let i = 0; i < songDatabase.length; i++) {
         const titleKey = songDatabase[i].title.toLowerCase();
@@ -127,19 +123,22 @@ console.log(getAllSongsByTitle('Hurt'));
 //What if a user had multiple playlists? 
 //How could we accomodate that? Either describe how to fix this problem or make some code!
 
-const myPlaylistRock = [];
-const myPlaylistClassic = [];
+const myPlaylists = {
+    rock: [],
+    classic: []
+}
 
-function addSongToPlaylist(title, playlist) {
+
+function addSongToPlaylist(title, category) {
     const song = getSongByTitleFuzzy(title);
     if (song) {
-        playlist.push(song);
+        myPlaylists[category].push(song);
     }
 }
 
-addSongToPlaylist('3 nails in wood', myPlaylistClassic);
-addSongToPlaylist('high', myPlaylistRock);
+addSongToPlaylist('3 nails in wood', 'rock');
+addSongToPlaylist('high', 'classic');
 
-console.log(myPlaylistClassic, myPlaylistRock); // [{ songId: 2, title: '3 nails in wood', artist: 'The carpenters' }]
+console.table(myPlaylist); // [{ songId: 2, title: '3 nails in wood', artist: 'The carpenters' }]
 
 

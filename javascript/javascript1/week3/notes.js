@@ -6,10 +6,7 @@ const notes = [];
 
 function addNote(content, id) {
     if (typeof (content) === 'string' && typeof (id) === 'number' && content && id) {
-        notes.push({
-            noteContent: content,
-            noteId: id,
-        });
+        notes.push({content,id});
     }
     //return notes;
 }
@@ -31,10 +28,9 @@ addNote('test note', true);
 function getNoteFromId(id) {
     if (typeof (id) === 'number') {
         for (let i = 0; i < notes.length; i++) {
-            const existingIdNote = notes[i].noteId;
+            const existingIdNote = notes[i].id;
             if (existingIdNote === id) {
-                const content = notes[i].noteContent;
-                return content;
+                return notes[i].content;;
             }
         }
     } else {
@@ -48,19 +44,23 @@ console.log(getNoteFromId());
 console.log(getNoteFromId('2'));
 
 
-//Get all notes
+//Get all notes - content
 
 function getAllNotes() {
-    return notes;
+    const notesContent = [];
+    for (let i = 0; i < notes.length; i++) {
+        notesContent.push(notes[i].content);
+    }
+    return notesContent;
 }
 
-console.table(getAllNotes());
+console.log(getAllNotes());
 
 //Log out notes
 
 function logOutNotesFormatted() {
     for (let i = 0; i < notes.length; i++) {
-        console.log(`The note with id: ${notes[i].noteId}, has the following note text: ${notes[i].noteContent}.`);
+        console.log(`The note with id: ${notes[i].id}, has the following note text: ${notes[i].content}.`);
     }
 }
 
@@ -73,8 +73,8 @@ console.log(logOutNotesFormatted());
 function addNoteDone(content) {
     if (typeof (content) === 'string' && content) {
             notes.push({
-                noteContent: content,
-                noteId: notes.length + 1,
+                content: content,
+                id: notes.length + 1,
         });
     }
 }
