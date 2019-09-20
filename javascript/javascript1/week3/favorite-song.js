@@ -36,10 +36,9 @@ function addSongToDatabase(title, artist) {
     }
 }
 
-// should songId be plus 1 of the latest?
-
 addSongToDatabase('Enter Sandman','Metallica');
 addSongToDatabase('Aces High','Iron Maiden');
+addSongToDatabase('High Voltage', 'AC/DC');
 addSongToDatabase('Metallica');
 addSongToDatabase(null, null);
 addSongToDatabase("", "");
@@ -74,8 +73,28 @@ function getSongByTitleFuzzy(title) {
     }
 }
 
-console.log(getSongByTitleFuzzy('When is enough too'));
-console.log(getSongByTitleFuzzy('too little'));
+//Optional: Add fuzzy search, so we can search for 'When enough to little?' and still get the song with id 4.
+function getSongByTitleFuzzy2(title) {
+    const titleSplit = (title.split(' '));
+    const mySearch = [];
+    for (let i = 0; i < titleSplit.length; i++) {
+        for (let j = 0; j < songDatabase.length; j++) {
+            const titleDatabase = songDatabase[j].title.toLowerCase();  
+            const titleSearched = titleSplit[i].toLowerCase();
+            if (titleDatabase.search(titleSearched) >= 0) {
+                mySearch.push(songDatabase[j]);
+            } 
+            
+        }
+        return mySearch;
+    }
+    return `There is no such song name in the database`;
+}
+
+console.log(getSongByTitleFuzzy2('When enough to little'));
+console.log(getSongByTitleFuzzy2('high'));
+//console.log(getSongByTitleFuzzy2('when'));
+
 
 //Create our own playlist
 
