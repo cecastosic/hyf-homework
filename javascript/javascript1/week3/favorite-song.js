@@ -63,7 +63,7 @@ console.log(searchedSong); // returns { songId: 4, title: 'When is enough too li
 const searchedSong2 = getSongByTitle('When is enough too');
 console.log(searchedSong2); // returns undefined
 
-//Optional: Add fuzzy search, so we can search for 'When enough to little?' and still get the song with id 4.
+//Optional: Add extra search
 function getSongByTitleFuzzy(title) {
     for (let i = 0; i < songDatabase.length; i++) {
         const titleKey = songDatabase[i].title.toLowerCase();
