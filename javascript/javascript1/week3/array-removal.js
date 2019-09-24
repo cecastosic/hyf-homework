@@ -6,7 +6,7 @@ const nameToRemove = 'Ahmad';
 
 // Write some code here
 
-names.splice(names.indexOf('Ahmad'), 1);
+names.splice(names.indexOf(nameToRemove), 1);
 
 //as a function 
 function removeName(name) {
