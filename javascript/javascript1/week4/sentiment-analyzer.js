@@ -19,7 +19,7 @@ function getSentimentScore(sentence) {
 }
 
 const sentimentScoreObject = getSentimentScore('I am mega super awesome happy');
-const sentimentScoreObject2 = getSentimentScore('I hate doing boring stuff');
+const sentimentScoreObject2 = getSentimentScore('I hate doing boring stuff when I am sad');
 console.log(sentimentScoreObject); 
 console.log(sentimentScoreObject2); 
 

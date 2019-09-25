@@ -3,6 +3,7 @@
 //For numbers which are multiples of both three and five print FizzBuzz.
 
 const numbers1 = [];
+
 function fizzBuzz1() {
     for (let i = 1; i <= 100; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
@@ -24,6 +25,7 @@ function fizzBuzz1() {
 //When that works. Make the two numbers for multiples into parameters. 
 
 const numbers = [];
+
 function fizzBuzz(num1, num2) {
     if (typeof num1 === 'number' && typeof num2 === 'number') {
         for (let i = 1; i <= 100; i++) {
@@ -38,8 +40,7 @@ function fizzBuzz(num1, num2) {
             }
         }
         return numbers;
-    }
-    else {
+    } else {
         return 'The parameters are not numbers'
     }
 }
@@ -47,4 +48,3 @@ function fizzBuzz(num1, num2) {
 
 console.log(fizzBuzz(4, 12));
 console.log(fizzBuzz('', true));
-
