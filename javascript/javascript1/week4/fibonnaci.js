@@ -1,9 +1,10 @@
-const fibonnaciSequence = [0,1]; 
+const fibonnaciSequence = [0, 1];
+
 function fib(number) {
     for (let i = 2; i < number; i++) {
-        fibonnaciSequence[i] = fibonnaciSequence[i-1] + fibonnaciSequence[i-2];
-    } 
-    return fibonnaciSequence[fibonnaciSequence.length-1]
+        fibonnaciSequence[i] = fibonnaciSequence[i - 1] + fibonnaciSequence[i - 2];
+    }
+    return fibonnaciSequence[fibonnaciSequence.length - 1]
 }
 
 
