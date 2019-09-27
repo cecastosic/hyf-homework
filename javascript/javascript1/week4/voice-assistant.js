@@ -155,7 +155,7 @@ function getReply(command) {
             favoriteDish = command.slice(20, command.lenght);
         } else if (command.includes('what is my favorite dish')) {
             if (!favoriteDish) {
-                console.log('Enter your favorite dish first');
+                sentences[idx].answer = 'Enter your favorite dish first';
             }
         }
     }
@@ -242,7 +242,7 @@ console.log(getReply('what day is it today?'));
 console.log(getReply('what is 3 + 3'));
 console.log(getReply('my favorite dish is spaghetti'));
 console.log(getReply('what is my favorite dish?'));
-//console.log(getReply('Set a timer for 4 minutes'));
+console.log(getReply('Set a timer for 4 minutes'));
 console.log(getReply('add Bike ride the 3/5-2019 to my calendar')); // Bike ride added to your calendar
 console.log(getReply('add Running the 9/23-2019 to my calendar'));
 console.log(getReply('what am i doing this week?'));
