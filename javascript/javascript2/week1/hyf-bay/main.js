@@ -19,25 +19,14 @@ function renderProducts(array) {
     const li = document.createElement('li');
     ul.appendChild(li);
     array.forEach((object) => {
-        
+
         const subUl = document.createElement('ul');
         li.appendChild(subUl);
-        
-        const liName = document.createElement('li');
-        liName.classList.add('name');
-        liName.innerHTML = object.name;
-        subUl.appendChild(liName);
-        
-        const liPrice = document.createElement('li');
-        liPrice.classList.add('price');
-        liPrice.innerHTML = object.price;
-        subUl.appendChild(liPrice);
-        
-        const liRating = document.createElement('li');
-        liRating.classList.add('rating');
-        liRating.innerHTML = object.rating;
-        subUl.appendChild(liRating);
-        
+
+        subUl.appendChild(makeListItem('name', object.name));
+        subUl.appendChild(makeListItem('price', object.price));
+        subUl.appendChild(makeListItem('rating', object.rating));
+
         const liShips = document.createElement('li');
         liShips.classList.add('ships-to');
         const subSubUl = document.createElement('ul');
@@ -47,14 +36,18 @@ function renderProducts(array) {
         object.shipsTo.forEach((country) => {
             const subSubLi = document.createElement('li');
             subSubLi.innerHTML = country;
-            subSubUl.appendChild(subSubLi);        
+            subSubUl.appendChild(subSubLi);
         })
-});
+    });
 }
 
-
+function makeListItem(className, key) {
+    const listItem = document.createElement('li');
+    listItem.classList.add(className);
+    listItem.innerHTML = key;
+    return listItem;
+}
 
 // const testProductNames = ['Flat screen', 'Mobile phone', 'Wallet'];
-renderProducts(products); 
+renderProducts(products);
 // Should add 3 li's to the ul under the products section with Flat screen, Mobile phone, Wallet text
-
