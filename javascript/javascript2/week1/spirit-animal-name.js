@@ -11,34 +11,35 @@ if (!input.value) {
     p.textContent = `Enter your name first`;
 }
 
-    btn.addEventListener('click', function() {
-        const selection = document.getElementById('select-option').value;
+btn.addEventListener('click', function () {
+    const selection = document.getElementById('select-option').value;
 
-        if (selection === 'click-btn' && input.value) {
-            const name = input.value;
-            p.textContent = `${name} - ${spiritualNames[number]}`;
-        } 
-    });
+    if (selection === 'click-btn' && input.value) {
+        takeName(input.value);
+    }
+});
 
-    input.addEventListener('mouseover', function() {
-        const selection = document.getElementById('select-option').value;
+input.addEventListener('mouseover', function () {
+    const selection = document.getElementById('select-option').value;
 
-        if (selection === 'hover-input' && input.value) {
-            const name = input.value;
-            p.textContent = `${name} - ${spiritualNames[number]}`;
-        } 
-    });
+    if (selection === 'hover-input' && input.value) {
+        takeName(input.value);
+    }
+});
 
-    input.addEventListener('input', function() {
-        const selection = document.getElementById('select-option').value;
+input.addEventListener('input', function () {
+    const selection = document.getElementById('select-option').value;
 
-        if (selection === 'text-written' && input.value) {
-            const name = input.value;
-            p.textContent = `${name} - ${spiritualNames[number]}`;
-        } 
-    });
+    if (selection === 'text-written' && input.value) {
+        takeName(input.value);
+    }
+});
 
-
+function takeName(value) {
+    const name = value;
+    p.textContent = `${name} - ${spiritualNames[number]}`;
+    return p.textContent;
+}
 
 
 //Now a user tells us that he wants a new spirit animal. No problem we say. 
