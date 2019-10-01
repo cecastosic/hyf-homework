@@ -12,33 +12,25 @@ if (!input.value) {
 }
 
 btn.addEventListener('click', function () {
-    const selection = document.getElementById('select-option').value;
-
-    if (selection === 'click-btn' && input.value) {
-        takeName(input.value);
-    }
+        takeName(input.value, 'click-btn');
 });
 
 input.addEventListener('mouseover', function () {
-    const selection = document.getElementById('select-option').value;
-
-    if (selection === 'hover-input' && input.value) {
-        takeName(input.value);
-    }
+    takeName(input.value, 'hover-input');
 });
 
 input.addEventListener('input', function () {
-    const selection = document.getElementById('select-option').value;
-
-    if (selection === 'text-written' && input.value) {
-        takeName(input.value);
-    }
+    takeName(input.value, 'text-written');
 });
 
-function takeName(value) {
-    const name = value;
-    p.textContent = `${name} - ${spiritualNames[number]}`;
-    return p.textContent;
+function takeName(value, wantedSelection) {
+    const selection = document.getElementById('select-option').value;
+
+    if (selection === wantedSelection && value) {
+        const name = value;
+        p.textContent = `${name} - ${spiritualNames[number]}`;
+        return p.textContent;
+    }
 }
 
 
