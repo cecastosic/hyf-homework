@@ -1,10 +1,9 @@
 const btn = document.getElementById('get-spiritual');
 const input = document.getElementById('input');
 const p = document.getElementById('spiritual-name');
-const selection = document.getElementById('select-option').value;
 
 const spiritualNames = ['The fullmoon wolf', 'The fearless tiger', 'The crying butterfly', 'The forest rabit', 'The yelling monkey', 'The strong deer', 'The talking snake', 'The beautiful cow', 'The dancing bear', 'The happy duck'];
-const number = Math.floor(Math.random() * 10);
+//const number = Math.floor(Math.random() * 10);
 
 
 if (!input.value) {
@@ -12,10 +11,14 @@ if (!input.value) {
 }
 
 btn.addEventListener('click', function () {
-        takeName(input.value, 'click-btn');
+    const number = Math.floor(Math.random() * 10);
+
+    takeName(input.value, 'click-btn');
 });
 
 input.addEventListener('mouseover', function () {
+    const number = Math.floor(Math.random() * 10);
+
     takeName(input.value, 'hover-input');
 });
 
@@ -24,6 +27,7 @@ input.addEventListener('input', function () {
 });
 
 function takeName(value, wantedSelection) {
+    const number = Math.floor(Math.random() * 10);
     const selection = document.getElementById('select-option').value;
 
     if (selection === wantedSelection && value) {
@@ -32,6 +36,15 @@ function takeName(value, wantedSelection) {
         return p.textContent;
     }
 }
+
+document.getElementById('select-option').addEventListener('change', function() {
+    let optionValue = document.getElementById('select-option').value;
+    if (optionValue === 'hover-input' || optionValue === 'text-written') {
+        btn.disabled = true;
+    } else {
+        btn.disabled = false;
+    }
+});
 
 
 //Now a user tells us that he wants a new spirit animal. No problem we say. 
