@@ -111,13 +111,6 @@ shipsToCountry.addEventListener('change', function () {
 // Create some extra feature
 // No matter how small or how big. Create some feature that would be cool/helpful/quirky/funny.
 
-// Sort the products - optional
-// const sortedProducts = products.sort((a, b) => (a.name > b.name) ? 1 : -1);
-// renderProducts(sortedProducts);
-// const sortedProductsName = 
-// const sortedProductsCheap = array.sort((a, b) => (a.price > b.price) ? 1 : -1);
-// const sortedProductsExpensive = array.sort((a, b) => (b.price > a.price) ? 1 : -1);
-
 const sortOption = document.querySelector('.sort > select');
 
 sortOption.addEventListener('change', function () {
@@ -135,6 +128,7 @@ sortOption.addEventListener('change', function () {
 // When clicking the Add to cart button for a product, 
 // that product should be added to the ul found under the section with the classname cart. 
 // The product should be added as a an li item.
+const prices = [];
 
 function buy(product) {
     const cartUl = document.querySelector('.cart > ul');
@@ -149,10 +143,11 @@ function buy(product) {
     liPrice.innerHTML = product.price;
     subUl.appendChild(liName);
     subUl.appendChild(liPrice);
+
+    prices.push(product.price);
+    const total = prices.reduce((price, acc) => acc += price, 0);
+
+    const totalCart = document.querySelector('.cart > .total > p > span');
+    totalCart.innerHTML = total;
 }
 
-function totalPrice() {
-    const prices = document.querySelectorAll('.price-product');
-    const total = prices.reduce((price, acc) => acc += price.innerHTML, 0);
-    return total;
-}
