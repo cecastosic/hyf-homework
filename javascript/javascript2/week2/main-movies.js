@@ -50,7 +50,7 @@ movies
     .map(movie => movie.title.split(' '))
     .forEach(title => title.filter((word, index) => title.indexOf(word) != index ? duplicatedTitles.push(title) : false));
 console.log(duplicatedTitles);
-
+    
 
 // Find the word that is mostly duplicated using sort Optional
 

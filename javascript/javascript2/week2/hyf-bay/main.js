@@ -21,7 +21,7 @@ function renderProducts(array) {
         ul.removeChild(ul.firstChild);
     }
     ul.appendChild(li);
-    array.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
     array.forEach((object) => {
 
         const subUl = document.createElement('ul');
@@ -98,7 +98,6 @@ function productsSearchCountry() {
         productsShipToCountry = products.filter(product =>
             product.shipsTo.indexOf(shipsToCountry.value) >= 0 ? true : false);
     }
-
     return productsShipToCountry;
 }
 
@@ -115,12 +114,27 @@ shipsToCountry.addEventListener('change', function () {
 // Sort the products - optional
 // const sortedProducts = products.sort((a, b) => (a.name > b.name) ? 1 : -1);
 // renderProducts(sortedProducts);
+// const sortedProductsName = 
+// const sortedProductsCheap = array.sort((a, b) => (a.price > b.price) ? 1 : -1);
+// const sortedProductsExpensive = array.sort((a, b) => (b.price > a.price) ? 1 : -1);
+
+const sortOption = document.querySelector('.sort > select');
+
+sortOption.addEventListener('change', function () {
+    let selection = sortOption.value;
+    if(selection === 'name') {
+        renderProducts(products.sort((a, b) => (a.name > b.name) ? 1 : -1));
+    } else if (selection === 'cheap') {
+        renderProducts(products.sort((a, b) => (a.price > b.price) ? 1 : -1));
+    } else {
+        renderProducts(products.sort((a, b) => (b.price > a.price) ? 1 : -1));
+    }
+});
 
 // Shopping cart - optional
 // When clicking the Add to cart button for a product, 
 // that product should be added to the ul found under the section with the classname cart. 
 // The product should be added as a an li item.
-
 
 function buy(product) {
     const cartUl = document.querySelector('.cart > ul');
