@@ -48,15 +48,33 @@ const duplicatedTitles = [];
 
 movies
     .map(movie => movie.title.split(' '))
-    .forEach(title => title.filter((word, index) => title.indexOf(word) != index ? duplicatedTitles.push(title) : false));
+    .forEach(title => title.filter((word, index) => title.indexOf(word) != index ? duplicatedTitles.push(title.join(' ')) : false));
+
 console.log(duplicatedTitles);
-    
+
 
 // Find the word that is mostly duplicated using sort Optional
+const duplicatedWords = [];
 
+movies
+    .map(movie => movie.title.split(' '))
+    .forEach(title => title.filter((word, index) => title.indexOf(word) != index ? duplicatedWords.push(word) : false))
+    
+const sortedDuplicatedWords = duplicatedWords.sort();
+const objWords = [];
+for (let i = 0; i < sortedDuplicatedWords.length; i = i + count) {
+    count = 1;
+    for (let j = i + 1; j < sortedDuplicatedWords.length; j++) {
+      if (sortedDuplicatedWords[i] === sortedDuplicatedWords[j])
+        count++;
+    }
+    objWords.push({'word':sortedDuplicatedWords[i],'count':count});
+}
 
+const sortedObjWords = objWords.sort((a, b) => (b.count > a.count) ? 1 : -1);
+console.log(`The nost duplicated word is ${sortedObjWords[0].word}, it occurs ${sortedObjWords[0].count} times.`);
 
-// Calculate the average rating of all the movies using reduce. Optional
+  // Calculate the average rating of all the movies using reduce. Optional
 const averageRating = (movies.reduce((sum, movie) => sum + movie.rating, 0) / movies.length).toFixed(2);
 console.log(averageRating);
 
