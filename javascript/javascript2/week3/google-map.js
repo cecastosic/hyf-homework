@@ -4,7 +4,7 @@ const btnLocation = document.getElementById('log-location');
 const status = document.getElementById('status');
 const positionLatitude = document.getElementById('position-latitude');
 const positionLongitude = document.getElementById('position-longitude');
-
+const map = document.getElementById('map');
 
 function myPosition() {
 
@@ -14,7 +14,7 @@ function myPosition() {
             const longitude = position.coords.longitude;
             positionLatitude.textContent = `This is the latitude: ${latitude}`;
             positionLongitude.textContent = `This is the longitude: ${longitude}`;
-            
+            map.innerHTML = `<div style="width: 100%"><iframe width="800" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=${latitude},${longitude}&amp;q=+(My%20location)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>`;
         });
           } else {
             status.textContent = 'Unable to retrieve your location';
@@ -24,12 +24,4 @@ function myPosition() {
 
 btnLocation.addEventListener('click', myPosition);
 
-//api key AIzaSyDO4ipzgieNMSSgfjXqUUEd1ekJngtkjyw
 
-var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-        });
-    }
