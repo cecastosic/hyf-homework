@@ -157,3 +157,13 @@ function buy(product) {
     const totalCart = document.querySelector('.cart > .total > p > span');
     totalCart.innerHTML = total;
 }
+
+// In order to analyse the product prices we need to send the prices of the products to a server.
+const allPrices = products.map(product => product.price);
+
+const callback = (response) => {
+    console.log(response);
+};
+
+sendPricesToServer(allPrices, callback);
+
