@@ -27,6 +27,8 @@ function startPosition() {
   pCounterS.textContent = counterS;
   pCounterL.textContent = counterL;
   confetti.clear();
+  clearInterval(setIntervalF);
+  counter.style.display = "block";
 }
 
 const timeout = () => {
@@ -34,6 +36,8 @@ const timeout = () => {
     console.log("The game is over!");
     gameOver = true;
     hGameOver.style.display = "block";
+    counter.style.display = "none";
+
     if (counterS > counterL) {
       hPlayerS.textContent = "Winner!";
       hPlayerL.textContent = "Looser!";
@@ -65,7 +69,10 @@ const timeout = () => {
 
 btn.addEventListener("click", () => {
   startPosition();
-  if (input.value) timeout();
+  if (input.value) {
+    countdown();
+    timeout();
+  }
 });
 
 // Set a timeout for the time specified by the user.
@@ -89,3 +96,19 @@ window.addEventListener("keypress", event => {
     }
   }
 });
+
+let setIntervalF = null;
+
+function countdown() {
+  const counter = document.getElementById("counter");
+  let timer = input.value;
+
+  let interval = function() {
+    counter.textContent = `Counter: ${timer}`;
+    if (timer === 0) return;
+    timer--;
+  };
+  interval();
+
+  setIntervalF = setInterval(interval, 1000);
+}
