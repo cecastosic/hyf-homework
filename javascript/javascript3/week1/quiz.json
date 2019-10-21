@@ -1,0 +1,56 @@
+[{
+    "quiz": {
+        "javascript": {
+            "question1": {
+                "question": "What is the HTML tag under which one can write the JavaScript code?",
+                "options": [
+                    "<javascript>",
+                    "<scripted>",
+                    "<script>",
+                    "<js>"
+                ],
+                "answer": "<script>"
+            },
+            "question2": {
+                "question": "Which of the following is the correct syntax to display “GeeksforGeeks” in an alert box using JavaScript?",
+                "options": [
+                    "alertbox(“GeeksforGeeks”);",
+                    "msg(“GeeksforGeeks”);",
+                    "msgbox(“GeeksforGeeks”);",
+                    "alert(“GeeksforGeeks”);"
+                ],
+                "answer": "alert(“GeeksforGeeks”);"
+            },
+            "question3": {
+                "question": "What is the correct syntax for referring to an external script called “geek.js”?",
+                "options": [
+                    "<script src=”geek.js”>",
+                    "<script href=”geek.js”>",
+                    "<script ref=”geek.js”>",
+                    "<script name=”geek.js”>"
+                ],
+                "answer": "<script src=”geek.js”>"
+            },
+            "question4": {
+                "question": "Which of the following is not a reserved word in JavaScript?",
+                "options": [
+                    "Interface",
+                    "Throws",
+                    "Program",
+                    "Short"
+                ],
+                "answer": "program"
+            },
+            "question5": {
+                "question": "How can you get the total number of arguments passed to a function?",
+                "options": [
+                    "Using args.length property",
+                    "Using arguments.length property",
+                    "Both of the above",
+                    "None of the above"
+                ],
+                "answer": "program"
+            }
+        }
+    }
+}]
