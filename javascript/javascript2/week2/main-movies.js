@@ -1,13 +1,13 @@
 //const movies = require('./movies.js');
-console.log(movies);
+//console.log(movies);
 
 // Create an array of movies containing the movies with a short title (you define what short means)
-const shortTitles = movies.filter(movie => movie.title.length < 5 ? true : false);
+const shortTitles = movies.filter(movie => movie.title.length < 5);
 console.log(shortTitles);
 
 
 // Create an array of movie titles with long movie titles
-const longTitles = movies.filter(movie => movie.title.length > 12 ? true : false);
+const longTitles = movies.filter(movie => movie.title.length > 12);
 console.log(longTitles);
 
 // Count the number of movies made between 1980-1989 (including both the years)
@@ -16,8 +16,7 @@ console.log(eighties);
 
 // Create a new array that has an extra key called tag. 
 //The tag is based on the rating: Good (>= 7), Average (>= 4 and < 7), Bad (< 4)
-const rating = movies
-    .forEach(movie => {
+const rating = movies.map(movie => {
         if (movie.rating >= 7) {
             movie.tag = 'Good';
         } else if (movie.rating >= 4 && movie.rating < 7) {
@@ -25,8 +24,9 @@ const rating = movies
         } else {
             movie.tag = 'Bad';
         }
+        return movies;
     });
-
+console.log(rating);
 // Using chaining, first filter the movies array to only contain the movies rated higher than 6. 
 // Now map the movies array to only the rating of the movies.
 const highRating = movies
