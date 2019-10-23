@@ -2,7 +2,10 @@
 let url = "";
 
 function fetchData(url) {
-  return fetch(url).then(response => response.json());
+  document.getElementById("weather-data").innerHTML = "Loading data";
+  return fetch(url).then(response => {
+    return response.json();
+  });
   // .then(data => {
   //  console.log(data);
   //  });
@@ -36,6 +39,10 @@ function renderData(data) {
 
   if (data.name === undefined) cityName.innerHTML = `Wrong city name`;
   else cityName.innerHTML = data.name;
+
+  // put city to localstorage
+  localStorage.setItem("lastLocation", data.name);
+
   for (weather of data.weather) {
     const pW = document.createElement("p");
     pW.className = "bold";
@@ -117,8 +124,6 @@ function renderData(data) {
   const mapDiv = document.createElement("div");
   mapDiv.classList.add = "map";
   mainDiv.appendChild(mapDiv);
-  // const latitude = data.coord.lat;
-  // const longitude = data.coord.lon;
   mapDiv.innerHTML = `<div style="width: 100%"><iframe width="500" height="300" src="https://maps.google.com/maps?q=${data.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>`;
 }
 
@@ -130,7 +135,7 @@ function resetView() {
   resultsDiv.appendChild(div);
 }
 
-// Add a button to your page, clicking this button will get the users current position. 
+// Add a button to your page, clicking this button will get the users current position.
 // Use that position to fetch weather data from that position.
 
 const btnPosition = document.getElementById("btn-position");
@@ -147,19 +152,18 @@ btnPosition.addEventListener("click", () => {
   });
 });
 
-
-// When a user has gotten a location through either the input element or the geo location api, save that location using localstorage. 
+// When a user has gotten a location through either the input element or the geo location api, save that location using localstorage.
 // Localstorage is a way to save data even when you close the browser.
 // Now when loading the page and there is a city in the localstorage, use that to get the current weather.
 function showSavedLocation() {
-    navigator.geolocation.watchPosition((position) => {
-        const savedPosition = [];
-        savedPosition.push(position.coords.latitude);
-        savedPosition.push(position.coords.longitude);
-        
-        url = `https://api.openweathermap.org/data/2.5/weather?lat=${savedPosition[0]}&lon=${savedPosition[1]}&appid=b3239c7eaddeb6dd2ef7235478b440d9`;
-        fetchData(url).then(data => renderData(data));
-    });
+  const valueCity = localStorage.getItem("lastLocation");
+  url =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    valueCity +
+    "&appid=b3239c7eaddeb6dd2ef7235478b440d9";
+
+  fetchData(url).then(data => renderData(data));
 }
 
-//window.addEventListener('load', showSavedLocation());
+if (localStorage && localStorage.getItem("lastLocation"))
+  window.addEventListener("load", showSavedLocation());
