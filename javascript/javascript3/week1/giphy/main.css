@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pacifico&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans";
+  min-height: 100vh;
+  text-align: center;
+}
+
+main {
+  margin: 5px auto;
+  width: 600px;
+}
+
+h1 {
+  color: #333;
+  font-family: "Pacifico", cursive;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+}
+
+input {
+  display: block;
+  font-size: 1.1em;
+  margin: 5px auto;
+  padding: 10px;
+  width: 300px;
+}
+
+button {
+  background: #3ece8e;
+  color: #fff;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+#giphy-content div {
+  background: #fff;
+  box-shadow: 1px 1px 10px #ccc;
+  margin: 20px;
+  padding: 20px;
+  max-width: 520px;
+}
