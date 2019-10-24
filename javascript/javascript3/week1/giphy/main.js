@@ -26,14 +26,11 @@ btn.addEventListener("click", () => {
 function renderData(data) {
   resetView();
   const div = document.getElementById("giphy-content");
-  console.log(data);
-  console.log(data.data);
-  console.log(data.data.images);
   for (gif of data.data) {
     const divImage = document.createElement("div");
     div.appendChild(divImage);
 
-    // Temperature
+    // URL video
     Object.keys(gif.images).forEach(function(item) {
       if (item === "original_mp4") {
         divImage.innerHTML = `
@@ -42,9 +39,6 @@ function renderData(data) {
                 </video>`;
       }
     });
-
-    //video.poster = ;
-    //video.style = ;
   }
 }
 
