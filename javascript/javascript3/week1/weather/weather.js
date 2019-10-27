@@ -6,9 +6,6 @@ function fetchData(url) {
   return fetch(url).then(response => {
     return response.json();
   });
-  // .then(data => {
-  //  console.log(data);
-  //  });
 }
 
 const input = document.getElementById("city");
@@ -24,8 +21,6 @@ btn.addEventListener("click", () => {
     fetchData(url).then(data => renderData(data));
   }
 });
-
-//const fetchedData = fetchData(url).then(data => renderData(data));
 
 function renderData(data) {
   resetView();
@@ -47,43 +42,48 @@ function renderData(data) {
     const pW = document.createElement("p");
     pW.className = "bold";
     const img = document.createElement("img");
-    // const pD = document.createElement('p');
     div.appendChild(pW);
     div.appendChild(img);
-    // div.appendChild(pD);
 
     // Icon for the weather type
     img.src = "http://openweathermap.org/img/wn/" + weather.icon + ".png";
     pW.innerHTML = weather.main;
-    // pD.innerHTML = weather.description;
 
-    if (weather.main === "Clear") {
-      document.body.style.backgroundImage = "url('images/sunny.jpg')";
-    } else if (weather.main === "Clouds") {
-      document.body.style.backgroundImage = "url('images/cloudy.jpg')";
-    } else if (weather.main === "Drizzle") {
-      document.body.style.backgroundImage = "url('images/drizzle.jpg')";
-    } else if (weather.main === "Rain") {
-      document.body.style.backgroundImage = "url('images/rain.jpg')";
-    } else if (weather.main === "Thunderstorm") {
-      document.body.style.backgroundImage = "url('images/thunderstorm.jpg')";
-    } else if (weather.main === "Snow") {
-      document.body.style.backgroundImage = "url('images/snow.jpg')";
-    } else if (
-      weather.main === "Mist" ||
-      weather.main === "Haze" ||
-      weather.main === "Sand" ||
-      weather.main === "Ash" ||
-      weather.main === "Fog" ||
-      weather.main === "Dust"
-    ) {
-      document.body.style.backgroundImage = "url('images/fog.jpg')";
-    } else if (weather.main === "Tornado") {
-      document.body.style.backgroundImage = "url('images/tornado.jpg')";
-    } else if (weather.main === "Squall") {
-      document.body.style.backgroundImage = "url('images/squall.jpg')";
-    } else {
-      document.body.style.backgroundImage = "url('images/clear-sky.jpg')";
+    switch (weather.main) {
+      case "Clear":
+        document.body.style.backgroundImage = "url('images/sunny.jpg')";
+        break;
+      case "Clouds":
+        document.body.style.backgroundImage = "url('images/cloudy.jpg')";
+        break;
+      case "Drizzle":
+        document.body.style.backgroundImage = "url('images/drizzle.jpg')";
+        break;
+      case "Rain":
+        document.body.style.backgroundImage = "url('images/rain.jpg')";
+        break;
+      case "Thunderstorm":
+        document.body.style.backgroundImage = "url('images/thunderstorm.jpg')";
+        break;
+      case "Snow":
+        document.body.style.backgroundImage = "url('images/snow.jpg')";
+        break;
+      case "Mist":
+      case "Haze":
+      case "Sand":
+      case "Ash":
+      case "Fog":
+      case "Dust":
+        document.body.style.backgroundImage = "url('images/fog.jpg')";
+        break;
+      case "Tornado":
+        document.body.style.backgroundImage = "url('images/tornado.jpg')";
+        break;
+      case "Squall":
+        document.body.style.backgroundImage = "url('images/squall.jpg')";
+        break;
+      default:
+        document.body.style.backgroundImage = "url('images/clear-sky.jpg')";
     }
   }
 
@@ -144,7 +144,6 @@ btnPosition.addEventListener("click", () => {
   navigator.geolocation.getCurrentPosition(function(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    //console.log(latitude, longitude);
 
     url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=b3239c7eaddeb6dd2ef7235478b440d9`;
     fetchData(url).then(data => renderData(data));
