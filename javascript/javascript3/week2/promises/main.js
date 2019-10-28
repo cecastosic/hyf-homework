@@ -46,18 +46,19 @@ getCurrentLocation()
     console.log(error);
   });
 
-
-
 //  Fetch some data from an api.
-const fetchedData = fetch('https://www.rijksmuseum.nl/api/nl/collection/SK-C-5?key=G2Se0AIM&format=json').then(response => response.json());
+const fetchedData = fetch(
+  "https://www.rijksmuseum.nl/api/nl/collection/SK-C-5?key=G2Se0AIM&format=json"
+).then(response => response.json());
 //  After that data has been fetched, wait 3 seconds
 //  Log out the data from the api
-const timeout = fetchedData.then((data) => setTimeout(() => console.log(data), 3000));
-
-
+const timeout = fetchedData.then(data =>
+  setTimeout(() => console.log(data), 3000)
+);
 
 //  Optional Now do all of these things using chaining
-fetch('https://www.rijksmuseum.nl/api/nl/collection/SK-C-5?key=G2Se0AIM&format=json')
-    .then(response => response.json())
-    .then((data) => setTimeout(() => console.log(data), 3000));
-
+fetch(
+  "https://www.rijksmuseum.nl/api/nl/collection/SK-C-5?key=G2Se0AIM&format=json"
+)
+  .then(response => response.json())
+  .then(data => setTimeout(() => console.log(data), 3000));
