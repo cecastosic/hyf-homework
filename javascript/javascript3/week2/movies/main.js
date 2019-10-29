@@ -7,17 +7,11 @@ const movies = fetch(url)
   .then(movies => {
     // Create an array of bad movies
     const badMovies = movies.filter(movie => movie.rating <= 5);
-    return badMovies;
-  })
-  .then(movies => {
     // Create an array of bad movies since year 2000
-    const badMovies2000 = movies.filter(movie => movie.year >= 2000);
-    return badMovies2000;
-  })
-  .then(movies => {
+    const badMovies2000 = badMovies.filter(movie => movie.year >= 2000);
     // Create an array of the titles of the bad movies since year 2000
-    const badMovies2000Titles = movies.map(movie => movie.title);
+    const badMovies2000Titles = badMovies2000.map(movie => movie.title);
     return badMovies2000Titles;
-  });
+  })
 
 console.log(movies);
