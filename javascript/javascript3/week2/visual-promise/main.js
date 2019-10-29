@@ -1,26 +1,26 @@
 // translateOneByOne - Should translate the circles one at a time from their random start position to their target.
 // Log something out after each element has been moved
 
+function functionMove(selector, xCoord, yCoord) {
+    return moveElement(document.querySelector(selector), { x: xCoord, y: yCoord });
+}
+
 function translateOneByOne() {
-  moveElement(document.querySelector(".marks > li"), { x: 20, y: 300 })
+    functionMove(".marks > li", 20, 300)
     .then(() => {
       console.log("Red circle has been moved");
     })
     .then(() => {
-      return moveElement(document.querySelector(".marks > li + li"), {
-        x: 400,
-        y: 300
-      }).then(() => {
-        console.log("Blue circle has been moved");
-      });
+      return functionMove(".marks > li + li", 400, 300)
+        .then(() => {
+            console.log("Blue circle has been moved");
+        });
     })
     .then(() => {
-      return moveElement(document.querySelector(".marks > li + li + li"), {
-        x: 400,
-        y: 20
-      }).then(() => {
-        console.log("Green circle has been moved");
-      });
+      return functionMove(".marks > li + li + li", 400, 20)
+        .then(() => {
+            console.log("Green circle has been moved");
+        });
     });
 }
 //translateOneByOne();
@@ -29,24 +29,14 @@ function translateOneByOne() {
 // Log out something after all elements have been moved
 
 function translateAllAtOnce() {
-  moveElement(document.querySelector(".marks > li + li + li"), {
-    x: 400,
-    y: 20
-  }).then(() => {
-    console.log("Green circle has been moved");
-  });
+  const greenCircle = functionMove(".marks > li + li + li", 400, 20);
 
-  moveElement(document.querySelector(".marks > li + li"), {
-    x: 400,
-    y: 300
-  }).then(() => {
-    console.log("Blue circle has been moved");
-  });
+  const blueCircle = functionMove(".marks > li + li", 400, 300);
 
-  moveElement(document.querySelector(".marks > li"), { x: 20, y: 300 }).then(
-    () => {
-      console.log("Red circle has been moved");
-    }
-  );
+  const redCircle = functionMove(".marks > li", 20, 300);
+
+  Promise.all([greenCircle, blueCircle, redCircle]).then(() => {
+    console.log("Green, blue and red circle has been moved at the same time");
+  });
 }
 translateAllAtOnce();
