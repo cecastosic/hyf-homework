@@ -21,7 +21,6 @@ class Circle {
           let ctx = canvas.getContext('2d');
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.r, this.startAngle, this.endAngle); 
-          ctx.closePath();
           ctx.fillStyle = this.fillColor;
           ctx.fill();
         }
@@ -32,9 +31,9 @@ class Circle {
 // The circle should have random x, y, radius and color
 
 const color = () => {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
