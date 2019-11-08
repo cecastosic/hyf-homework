@@ -40,7 +40,7 @@
                    "Program",
                    "Short"
                 ],
-                "answer": "program"
+                "answer": "Program"
              },
              "question5": {
                 "question": "How can you get the total number of arguments passed to a function?",
@@ -50,7 +50,7 @@
                    "Both of the above",
                    "None of the above"
                 ],
-                "answer": "program"
+                "answer": "Using arguments.length property"
              }
           }
        }
