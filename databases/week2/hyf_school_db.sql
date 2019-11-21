@@ -27,7 +27,7 @@ CREATE TABLE `student` (
 ALTER TABLE student ADD INDEX (name);
 
 -- Add a new column to the class table named status which can only have the following values: 
--- not-started, ongoing, finished (hint: enumerations)
+-- not-started, ongoing, finished (hint : enumerations)
 ALTER TABLE class 
 ADD COLUMN status ENUM('not-started', 'ongoing', 'finished');
 
