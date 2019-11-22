@@ -23,7 +23,7 @@ WHERE id = 42;
 
 -- Change the task due date with these attributes: taskID, newDueDate
 UPDATE task
-SET due_date = '19-12-2019 12:30:00'
+SET due_date = '2019-12-19 12:30:00'
 WHERE id = 42;
 
 -- Change the task status with these attributes: taskID, newStatus
