@@ -1,20 +1,22 @@
 -- Add a task with the these attributes: 
 -- title, description, created, updated, dueDate, statusID, userID
 INSERT INTO task (
-title, 
-description, 
-created, 
-updated, 
-due_date, 
-status_id, 
-user_id) VALUES (
-'learn about mysql',
-'learning about insert into queries',
-NOW(),
-NOW(),
-'2020-01-01 12:00:00',
-1,
-9);
+    title, 
+    description, 
+    created, 
+    updated, 
+    due_date, 
+    status_id, 
+    user_id
+) VALUES (
+    'learn about mysql',
+    'learning about insert into queries',
+    NOW(),
+    NOW(),
+    '2020-01-01 12:00:00',
+    1,
+    9
+);
 
 -- Change the title of a task with these attributes: taskID, newTitle
 UPDATE task 
