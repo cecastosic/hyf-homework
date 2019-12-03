@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "title": "Indian food in the winter",
+      "maxNumberOfGuests": 5,
+      "description": "A nice night out eating delicious indian food",
+      "createdAt": "2019/12/1 21:34",
+      "price": 75.00
+    },
+    {
+      "id": 2,
+      "title": "Thai food in the winter",
+      "maxNumberOfGuests": 7,
+      "description": "A nice night out eating hot thai food",
+      "createdAt": "2019/12/1 21:40",
+      "price": 80.00
+    },
+    {
+      "id": 3,
+      "title": "Asian food in the winter",
+      "maxNumberOfGuests": 7,
+      "description": "Brrr but a nice night out eating asian food",
+      "createdAt": "2019/12/1 21:50",
+      "price": 100.00
+    }
+  ]
