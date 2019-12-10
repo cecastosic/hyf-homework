@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "stars": 5,
+      "title": "Best meal ever",
+      "mealId": 1,
+      "createdAt": 12345,
+      "createdBy": "Ceca"
+    },
+    {
+        "id": 2,
+        "stars": 3,
+        "title": "Could be better",
+        "mealId": 2,
+        "createdAt": 12345,
+        "createdBy": "Benjamin"
+      }
+  ]
