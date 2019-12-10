@@ -30,18 +30,42 @@ app.get('/', (req, res) => {
     const {limit} = req.query;
     const {title} = req.query;
     const {createdAfter} = req.query;
-
+     
     if (maxPrice) {
-        const mealsMaxPrice = dataMeals.filter(meal => meal.price <= maxPrice);
+        const mealsMaxPrice = dataMeals.filter(meal => meal.price <= parseInt(maxPrice));
+        if (mealsMaxPrice.length === 0) {
+            res.status(404);
+            res.send('No meals in the price range');
+            return;
+        } 
         res.send(mealsMaxPrice);
     } else if (title) {
-        const mealsTitle = dataMeals.filter(meal => meal.title.search(new RegExp(title, 'i')) >= 0);
+        const titleTrim = title.trim().replace(/[^\w\s]/gi, '');
+        const mealsTitle = dataMeals.filter(meal => meal.title.search(new RegExp(titleTrim, 'i')) >= 0);
+        if (mealsTitle.length === 0) {
+            res.status(404);
+            res.send(`No meal matched with the word ${titleTrim}`);
+            return;
+        }
         res.send(mealsTitle);
     } else if (createdAfter) {
-        const mealsDate = dataMeals.filter(meal => meal.createdAt >= createdAfter);
+        const mealsDate = dataMeals.filter(meal => new Date(meal.createdAt) >= new Date(createdAfter));
+        console.log(mealsDate);
+        if (mealsDate.length === 0) {
+            res.status(404);
+            res.send(`No meal that has been created after ${createdAfter}`);
+            return;
+        }
         res.send(mealsDate);
     } else if (limit) {
-        const mealsLimit = dataMeals.slice(0, limit);
+        const num = parseInt(limit.trim());
+        const regex = limit.match(/[0-9]/gi);
+        const mealsLimit = dataMeals.slice(0, num);
+        if (!regex) { 
+            res.status(400);
+            res.send(`Bad request, ${limit.trim()} is not a number`);
+            return;
+        }
         res.send(mealsLimit);
     } else {
         res.json(dataMeals);
