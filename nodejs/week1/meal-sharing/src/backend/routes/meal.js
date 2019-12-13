@@ -1,14 +1,10 @@
 const express = require("express");
-const fs = require("fs");
+const meals = require("../meal-reviews-func.js");
 
 const app = express();
+const dataMeals = meals();
 
 // Respond with the json for a random meal (including it's reviews)
-
-const dataMeals = JSON.parse(fs.readFileSync(__dirname + '/../data/meals.json', "utf-8"));
-const dataReviews = JSON.parse(fs.readFileSync(__dirname + '/../data/reviews.json', "utf-8"));
-
-meal.reviews = dataReviews.filter(review => review.mealId === meal.id);
 
 app.get('/', (req, res) => {
     const randomNumber = Math.ceil(Math.random() * dataMeals.length);
@@ -17,4 +13,3 @@ app.get('/', (req, res) => {
 });
 
 module.exports = app;
-//module.exports = mealsWithReviews;
