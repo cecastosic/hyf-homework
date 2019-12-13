@@ -10,14 +10,7 @@ const app = express();
 const dataMeals = JSON.parse(fs.readFileSync(__dirname + '/../data/meals.json', "utf-8"));
 const dataReviews = JSON.parse(fs.readFileSync(__dirname + '/../data/reviews.json', "utf-8"));
 
-dataMeals.map(meal => {
-    meal.reviews = [];
-    for (let i = 0; i < dataReviews.length; i++) {
-        if (dataReviews[i].mealId === meal.id) {
-            meal.reviews.push(dataReviews[i]);
-        }
-    }
-});
+meal.reviews = dataReviews.filter(review => review.mealId === meal.id);
 
 app.get('/', (req, res) => res.json(dataMeals));
 
