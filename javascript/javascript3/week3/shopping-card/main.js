@@ -8,17 +8,16 @@ class Product {
 
   // Depending on the provided currency return the correct price for the product.
   convertToCurrency(currency) {
-    if (currency) {
-      if (currency === "dollar") {
-        const dollar = this.price * 0.15;
-        return dollar;
-      } else if (currency === "euro") {
-        const euro = this.price * 0.13;
-        return euro;
-      } else if (currency === "dinar") {
-        const dinar = this.price * 15.72;
-        return dinar;
-      } else return `No such currency`;
+    if (!currency) return 0;
+    switch (currency) {
+      case "dollar": 
+        return this.price * 0.15;
+      case "euro":
+        return this.price * 0.13;
+      case "dinar":
+        return this.price * 15.72;
+      default:
+        return this.price;
     }
   }
 }
@@ -51,10 +50,9 @@ class ShoppingCart {
 
   getTotal() {
     // should get the total price of the products in the shoppingcart
-    const totalPrice = this.products
+    return this.products
       .map(product => product.price)
       .reduce((sum, price) => sum + price, 0);
-    return totalPrice;
   }
 
   renderProducts() {
@@ -125,3 +123,4 @@ console.log(plant.convertToCurrency("dollar")); // 7.5
 console.log(plant.convertToCurrency("euro")); // 6.5
 console.log(plant.convertToCurrency("dinar")); // 786,10
 console.log(plant.convertToCurrency("bla")); // No such currency
+console.log(110*plant.convertToCurrency()); // No such currency
