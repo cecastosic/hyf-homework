@@ -79,7 +79,7 @@ router.get("/", (request, response) => {
   } else if (createdAfter) {
     pool.query(
       `SELECT * FROM meals WHERE created_at >= '${createdAfter}'`,
-      function(error, results, fields) {
+      function (error, results, fields) {
         if (error) {
           return response.send(error);
         }
@@ -99,11 +99,7 @@ router.get("/", (request, response) => {
       response.send(`Bad request, ${limit.trim()} is not a number`);
       return;
     }
-    pool.query(`SELECT * FROM meals LIMIT ${num}`, function(
-      error,
-      results,
-      fields
-    ) {
+    pool.query(`SELECT * FROM meals LIMIT ${num}`, function (error,results,fields) {
       if (error) {
         return response.send(error);
       } else {
@@ -111,7 +107,7 @@ router.get("/", (request, response) => {
       }
     });
   } else {
-    pool.query("SELECT * FROM meals", function(error, results, fields) {
+    pool.query("SELECT * FROM meals", function (error, results, fields) {
       // error will be an Error if one occurred during the query
       if (error) {
         return response.send(error);
@@ -131,11 +127,7 @@ router.get("/:id", (request, response) => {
     response.send(`Bad request, ${id} is not a number`);
     return;
   }
-  pool.query(`SELECT * FROM meals WHERE id = ${id}`, function(
-    error,
-    results,
-    fields
-  ) {
+  pool.query(`SELECT * FROM meals WHERE id = ${id}`, function (error,results,fields) {
     if (error) {
       return response.send(error);
     }
@@ -151,8 +143,7 @@ router.get("/:id", (request, response) => {
 // api/meals/ - POST - Adds a new meal
 router.post("/", (request, response) => {
     const meal = request.body;
-    console.log(meal);
-    pool.query("INSERT INTO meals SET ?", meal, function(error, results, fields) {
+    pool.query("INSERT INTO meals SET ?", meal, function (error, results, fields) {
         if (error) {
           return response.send(error);
         }
@@ -168,7 +159,6 @@ router.put("/:id", (request, response) => {
     response.send(`Bad request, ${id} is not a number`);
     return;
   }
-  console.log(request.body)
   pool.query(
     `UPDATE meals SET title = ?, description = ?, max_guests = ?, price = ?, created_at = ?, when_date = ? WHERE id = ?`,
     [
@@ -180,7 +170,7 @@ router.put("/:id", (request, response) => {
       request.body.when_date,
       parseInt(id)
     ],
-    function(error, results, fields) {
+    function (error, results, fields) {
       if (error) {
         return response.send(error);
       }
@@ -202,7 +192,7 @@ router.delete("/:id", (request, response) => {
       response.send(`Bad request, ${id} is not a number`);
       return;
     }
-    pool.query(`DELETE FROM meals WHERE id = ${id}`, function(error,results,fields) {
+    pool.query(`DELETE FROM meals WHERE id = ${id}`, function (error,results,fields) {
       if (error) {
         return response.send(error);
       }
