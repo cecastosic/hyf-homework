@@ -33,11 +33,16 @@ function App() {
     {description: "Eat breakfast" , deadline: "Fri Sep 15 2017"},
   ];
 
+  // hooks
+  const [state, setState] = React.useState(null);
+
+  setTimeout(() => setState(arrListItems), 3000);
+
   return (
     // Render a basic static todo list with three items:
     <div className="App">
       <Header />
-      <ListSection items={arrListItems}/>
+      {state ? <ListSection items={state}/> : <p>Loading...</p>}
     </div>
   );
 }
