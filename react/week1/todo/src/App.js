@@ -11,8 +11,8 @@ function Header () {
 
 function List (props) {
 
-  const items = props.items.map(item => {
-    return <li>{item.description}, {item.deadline}</li>
+  const items = props.items.map((item, idx) => {
+    return <li key={idx}>{item.description}, {item.deadline}</li>
   });
 
   return (<ul>{items}</ul>);
@@ -35,8 +35,7 @@ function App() {
 
   // hooks
   const [state, setState] = React.useState(null);
-
-  setTimeout(() => setState(arrListItems), 3000);
+  if (state === null) setTimeout(() => setState(arrListItems), 3000);
 
   return (
     // Render a basic static todo list with three items:
