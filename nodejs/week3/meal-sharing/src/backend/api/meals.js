@@ -57,12 +57,12 @@ router.get("/", (request, response) => {
     );
   } else if (availableReservations) {
     pool.query(
-      `SELECT meals.id, meals.title, meals.description, SUM(reservations.number_of_guests) as number_of_guests, meals.max_guests
-        FROM meals
-        JOIN reservations ON reservations.meals_id = meals.id
-        WHERE when_date >= CURRENT_TIMESTAMP
-        GROUP BY reservations.meals_id
-        HAVING SUM(reservations.number_of_guests) < meals.max_guests`,
+      `SELECT meals.id, meals.title, COALESCE(SUM(reservations.number_of_guests), 0) as number_of_guests, meals.max_guests
+      FROM meals
+      LEFT JOIN reservations ON reservations.meals_id = meals.id
+      WHERE when_date >= CURRENT_TIMESTAMP
+      GROUP BY meals.id
+      HAVING COALESCE(SUM(reservations.number_of_guests), 0) < meals.max_guests`,
       function(error, results, fields) {
         if (error) {
           return response.send(error);
