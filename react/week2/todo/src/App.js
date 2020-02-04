@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import data from "./data/data.json";
 
 function Header() {
   return (
@@ -21,15 +22,13 @@ function Counter() {
   return <p>You have used {count} seconds on this website</p>;
 }
 
-
-
-function List (props) {
+function List(props) {
   const [state, setDone] = useState([...props.items]);
 
   const addTodo = () => {
     // button add todo
     const addRandomItem = arr => {
-      const newId = state.length ? Math.max(...arr.map(item => item.id)) + 1 : 1;
+      const newId = arr.length ? Math.max(...arr.map(item => item.id)) + 1 : 1;
       arr.push({
         id: newId,
         description: "random text",
@@ -37,9 +36,9 @@ function List (props) {
       });
       setDone([...arr]);
     };
-  
+
     return <button onClick={() => addRandomItem(state)}>Add todo</button>;
-  }
+  };
 
   const handleCheck = id => {
     state.filter(item => item.id === id).map(item => (item.done = !item.done));
@@ -69,7 +68,7 @@ function List (props) {
   return (
     <>
       {addTodo()}
-      {state.length === 0 ? <span>No items</span> : <></>}
+      {state.length === 0 && <span>No items</span>}
       <ul>{items}</ul>
     </>
   );
@@ -84,39 +83,16 @@ function ListSection(props) {
 }
 
 function App() {
-  // as future items from DB
-  const arrListItems = [
-    {
-      id: 1,
-      description: "Get out of bed",
-      done: false
-    },
-    {
-      id: 2,
-      description: "Brush teeth",
-      done: false
-    },
-    {
-      id: 3,
-      description: "Eat breakfast",
-      done: false
-    }
-  ];
-
   // hooks
   const [state, setState] = useState(null);
-  if (state === null) setTimeout(() => setState(arrListItems), 3000);
+  if (state === null) setTimeout(() => setState(data), 3000);
 
   return (
     // Render a basic static todo list with three items:
     <div className="App">
       <Header />
       <Counter />
-      {state ? (
-          <ListSection items={state} />
-      ) : (
-        <p>Loading...</p>
-      )}
+      {state ? <ListSection items={state} /> : <p>Loading...</p>}
     </div>
   );
 }
