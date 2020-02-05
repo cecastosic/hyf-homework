@@ -13,7 +13,7 @@ function Header() {
 function Counter() {
   // timer that counts how long time a users has spent on the website
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
     let timer = setTimeout(() => {
       setCount(prev => prev + 1);
@@ -60,6 +60,7 @@ function List(props) {
         <input
           type="checkbox"
           name={item.description}
+          checked={item.done && "checked"}
           onChange={() => handleCheck(item.id)}
         />
         <button onClick={() => deleteItem(item.id)}>Delete</button>
