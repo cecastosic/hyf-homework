@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-function ListItem(props) {
-  const { item, onCheck, onDelete, onUpdate } = props;
+function ListItem({ item, onCheck, onDelete, onUpdate }) {
 
   const [edit, setEdit] = useState(false);
   const [description, setDescription] = useState(item.description);
