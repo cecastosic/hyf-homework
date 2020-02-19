@@ -10,7 +10,7 @@ function Counter() {
     return () => {
       clearTimeout(timer);
     };
-  });
+  }, [count]);
 
   return <p>You have used {count} seconds on this website</p>;
 }

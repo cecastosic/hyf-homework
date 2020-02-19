@@ -8,10 +8,11 @@ function List(props) {
   });
 
   const [state, setState] = useState(data);
-
-  const nextId = state.length ? Math.max(...state.map(item => item.id)) + 1 : 1;
+  const maxId = Math.max(...state.map(item => item.id));
+  const nextId = state.length > 0 ? maxId + 1 : 1;
+  
   const onAddRandom = randomItem => {
-    const newState = [...state].concat(randomItem);
+    const newState = [...state, randomItem];
     setState(newState);
   };
 

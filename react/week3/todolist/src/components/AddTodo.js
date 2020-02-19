@@ -4,14 +4,14 @@ import DatePicker from "react-date-picker";
 function AddTodo(onAddRandom, nextId) {
   // button add todo
   const [description, setDescription] = useState("");
-  const [deadline, setDeadline] = useState("");
-  const [value, setValue] = useState(new Date());
+  const [deadline, setDeadline] = useState(new Date().toLocaleDateString());
+  const [date, setDate] = useState(new Date());
 
   const addRandomArr = () => {
     onAddRandom({
       id: nextId,
-      description: description,
-      deadline: deadline,
+      description,
+      deadline,
       done: false
     });
   };
@@ -31,9 +31,10 @@ function AddTodo(onAddRandom, nextId) {
       <label>
         <span>Deadline:</span>
         <DatePicker
-          value={value}
+          value={date}
+          minDate={date}
           onChange={event => {
-            setValue(event);
+            setDate(event);
             setDeadline(event.toLocaleDateString());
           }}
         />

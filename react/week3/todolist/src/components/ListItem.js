@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-function ListItem(props) {
-  const { item, onCheck, onDelete, onUpdate } = props;
-
+function ListItem({ item, onCheck, onDelete, onUpdate }) {
+console.log("item " + item.id);
   const [edit, setEdit] = useState(false);
   const [description, setDescription] = useState(item.description);
 
@@ -40,4 +39,11 @@ function ListItem(props) {
   );
 }
 
-export default ListItem;
+function areEqual(prevProps, nextProps) {
+  return (
+    prevProps.description === nextProps.description &&
+    prevProps.deadline === nextProps.deadline
+  );
+}
+
+export default React.memo(ListItem, areEqual);
