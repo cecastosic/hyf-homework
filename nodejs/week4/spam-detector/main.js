@@ -14,7 +14,7 @@ class SpamDetector {
     
     isSpam(email) {
         // Has more than 60% uppercase characters
-        const checkUppercase = (email) => {
+        const checkUpperCaseRatio = (email) => {
             const subjectArr = email.subject.replace(/[^\ws+]/gi, '').split('');
             const bodyArr = email.body.replace(/[^\ws+]/gi, '').split('');
             const lettersArr = subjectArr.concat(bodyArr);
@@ -24,7 +24,7 @@ class SpamDetector {
         }
         
         // Contain words like: Viagra, Offer, Free, Business Proposal
-        const checkForWords = (email) => {
+        const checkSpamWords = (email) => {
             const spamWords = ["Viagra", "Offer", "Free", "Business Proposal"];
             const filterSpam = spamWords.filter(word => email.subject.toLowerCase().includes(word.toLowerCase()) || email.body.toLowerCase().includes(word.toLowerCase()));
             
@@ -32,11 +32,11 @@ class SpamDetector {
         }
         
         // Subject only contains the string "Hello"
-        const checkSubjectHello = (email) => {
+        const checkSubjectContainsHello = (email) => {
             return email.subject === "Hello";
         }
         
-        const result = [checkUppercase(email), checkForWords(email), checkSubjectHello(email)];
+        const result = [checkUpperCaseRatio(email), checkSpamWords(email), checkSubjectContainsHello(email)];
         return result.some(r => r); 
         
     }
