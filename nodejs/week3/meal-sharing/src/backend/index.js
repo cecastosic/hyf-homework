@@ -7,7 +7,7 @@ const router = express.Router();
 
 const app = express();
 
-const port = process.env.PORT || 5002;
+const port = process.env.PORT || 5000;
 // For week4 no need to look into this!
 /* const path = require("path"); */
 /* // Serve the built client html

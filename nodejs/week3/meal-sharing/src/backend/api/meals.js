@@ -15,11 +15,7 @@ router.get("/", (request, response) => {
   // createdAfter - Get meals that has been created after the date - /meals?createdAfter=2019-04-05
   // limit - Only specific number of meals - /meals?limit=4
 
-  const { maxPrice } = request.query;
-  const { title } = request.query;
-  const { availableReservations } = request.query;
-  const { createdAfter } = request.query;
-  const { limit } = request.query;
+  const { maxPrice, title, availableReservations, createdAfter, limit } = request.query;
 
   if (maxPrice) {
     pool.query(`SELECT * FROM meals WHERE price <= ${maxPrice}`, function(
@@ -93,13 +89,13 @@ router.get("/", (request, response) => {
       }
     );
   } else if (limit) {
-    const num = parseInt(limit.trim());
-    if (Object.is(num, NaN)) {
+    const numLimit = parseInt(limit.trim());
+    if (Object.is(numLimit, NaN)) {
       response.status(400);
       response.send(`Bad request, ${limit.trim()} is not a number`);
       return;
     }
-    pool.query(`SELECT * FROM meals LIMIT ${num}`, function (error,results,fields) {
+    pool.query(`SELECT * FROM meals LIMIT ${numLimit}`, function (error,results,fields) {
       if (error) {
         return response.send(error);
       } else {
