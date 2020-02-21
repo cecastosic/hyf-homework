@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
 * {
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 }
 
 .App-header {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 
 .App .search {
@@ -23,7 +23,7 @@
 .App .search input {
   font-size: 1em;
   padding: 0.3em;
-  width:30%;
+  width: 30%;
 }
 
 .App .users-list ul {
@@ -59,7 +59,7 @@
 }
 
 .App .users-list .details {
-  color:#666;
+  color: #666;
   font-size: 0.9em;
   margin: 0.6em 0;
   text-align: left;
