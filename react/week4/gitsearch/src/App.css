@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-size: 1.1em;
+  margin-left: 1.8em;
+  text-align: center;
+}
+
+.App-header {
+  font-family: 'Pacifico', cursive;
+}
+
+.App .search {
+  padding: 0.6em;
+}
+
+.App .search input {
+  font-size: 1em;
+  padding: 0.3em;
+  width:30%;
+}
+
+.App .users-list ul {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.App .users-list li {
+  border: 1px solid #f2f2f2;
+  list-style: none;
+  flex: 1 1 200px;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+.App .users-list li a {
+  color: #666;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+}
+
+.App .users-list img {
+  max-width: 40px;
+  border-radius: 40px;
+  margin-right: 0.3em;
+}
+
+.App .users-list .details {
+  color:#666;
+  font-size: 0.9em;
+  margin: 0.6em 0;
+  text-align: left;
+}
+
+.App .users-list .details p {
+  margin: 0.2em 0 0;
+}
+
+.App .users-list .details .bold {
+  font-weight: bold;
+}
+
+.App .users-list .details .section {
+  padding-top: 0.4em;
+}
