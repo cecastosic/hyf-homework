@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import User from "./User";
+import { SearchContext } from "./../App";
 
-function UsersList({ users }) {
+function UsersList() {
+  const { users } = useContext(SearchContext);
+
   return (
     <div className="users-list">
       <ul>

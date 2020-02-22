@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import SearchUsers from "./components/SearchUsers";
 import Loader from "./components/Loader";
 import UsersList from "./components/UsersList";
+
+export const SearchContext = createContext();
 
 function App() {
   const [query, setQuery] = useState("");
@@ -38,14 +40,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <SearchUsers query={query} setQuery={setQuery} />
-      {users && (
-        <section id="results">
-          {error && <div>{error}</div>}
-          {loading && !error ? <Loader /> : <UsersList users={users} />}
-        </section>
-      )}
+      <SearchContext.Provider value={{ query, setQuery, users }}>
+        <Header />
+        <SearchUsers />
+        {users && (
+          <section id="results">
+            {error && <div>{error}</div>}
+            {loading && !error ? <Loader /> : <UsersList />}
+          </section>
+        )}
+      </SearchContext.Provider>
     </div>
   );
 }

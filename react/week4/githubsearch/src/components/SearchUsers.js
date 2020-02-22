@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SearchContext } from "./../App";
 
-function SearchUsers({ query, setQuery }) {
+function SearchUsers() {
+  const { query, setQuery } = useContext(SearchContext);
+
   return (
     <section className="search">
       <input
