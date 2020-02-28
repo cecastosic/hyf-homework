@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import UserDetails from "./UserDetails";
 
 function User({ user }) {
-  const [details, setDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
-  const showDetails = event => {
+  const showUserDetails = event => {
     event.preventDefault();
-    setDetails(!details);
+    setShowDetails(!showDetails);
   };
 
   return (
     <li>
-      <a href={user.url} onClick={event => showDetails(event)}>
+      <a href={user.url} onClick={event => showUserDetails(event)}>
         <img src={user.avatar_url} alt={user.login} />
         <span>{user.login}</span>
       </a>
-      {details && <UserDetails id={user.id} user={user} />}
+      {showDetails && <UserDetails id={user.id} user={user} />}
     </li>
   );
 }

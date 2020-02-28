@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 function UserDetails({ user }) {
-  const [details, setDetails] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [details, setDetails] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const fetchDetailsData = async (login) => {
+    setLoading(true);
     const url = `https://api.github.com/users/${login}`;
     const details = await fetch(url)
       .then(data => data.json())
@@ -20,10 +21,10 @@ function UserDetails({ user }) {
   if (loading) return <></>;
   return (
     <div className="details">
-      <p className="bold">{details.name}</p>
-      <p>{details.blog}</p>
-      <p>{details.bio}</p>
-      <p>{details.location}</p>
+      {details.name && <p className="bold">{details.name}</p>}
+      {details.blog && <p>{details.blog}</p>}
+      {details.bio && <p>{details.bio}</p>}
+      {details.location && <p>{details.location}</p>}
       <div className="section">
         <p>Public repos: {details.public_repos}</p>
         <p>Followers: {details.followers}</p>
