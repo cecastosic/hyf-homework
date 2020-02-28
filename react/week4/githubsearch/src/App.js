@@ -10,7 +10,7 @@ export const SearchContext = createContext();
 
 function App() {
   const [query, setQuery] = useState("");
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [debouncedQuery] = useDebounce(query, 250);
