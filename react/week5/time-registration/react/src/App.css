@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+* {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  font-family: "Pacifico", cursive;
+  font-size: 2.5em;
+  margin-bottom: 0.4em;
+}
+
+input {
+  font-size: 0.9em;
+  padding: 0.6em;
+  width: 100%;
+}
+
+input.time {
+  width: 50%;
+}
+
+button {
+  background: #2aa0ea;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin: 1em 0;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.header {
+  color: #666;
+  text-align: center;
+}
+
+form {
+  width: 300px;
+}
+
+.header form {
+  margin: 1em auto;
+}
+
+.header input {
+  margin-top: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+.shifts {
+  border-top: 1px solid #ededed;
+  margin: 1em;
+  padding-top: 1em;
+}
+
+.shifts form label {
+  display: none;
+}
+
+.shifts form span {
+  display: inline-block;
+  padding-top:0.5em;
+  width: 50%;
+}
+
+.shifts .message {
+  background: #ccc;
+  padding: 0.5em;
+}
+
+.shift-list {
+  margin: 1em 0;
+}
+
+.shift-list ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.shift-list li {
+  list-style: none;
+  display: flex;
+}
+
+.shift-list li span {
+  border-right: 1px solid #ededed;
+  padding: 0.3em;
+  width: 12%;
+}
+
+.shift-list li span:last-child {
+  border-right: none;
+}
+
+.shift-list li span:first-child {
+  padding-left: 0;
+}
+
+.shift-list li:first-child {
+  font-weight: bold;
+}
