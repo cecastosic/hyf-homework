@@ -1,5 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Credentials for Shift manager app
+
+# Employer
+ceca3@google.dk
+123456
+
+# Employees
+ceca@google.dk
+123456
+
+ceca2@google.dk
+123456
+
+
 ## Available Scripts
 
 In the project directory, you can run:
