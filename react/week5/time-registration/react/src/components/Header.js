@@ -9,7 +9,7 @@ function Header() {
   const { userState, setUserState, setUserUid } = useContext(UserContext);
 
   return (
-    <div className="header">
+    <section className="header">
       <h1>Shift manager app</h1>
       {userState ? (
         <button
@@ -28,7 +28,7 @@ function Header() {
           <EmailPassAuth />
         </>
       )}
-    </div>
+    </section>
   );
 }
 

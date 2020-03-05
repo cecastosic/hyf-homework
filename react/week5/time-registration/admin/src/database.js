@@ -20,7 +20,6 @@ const getUserType = async uid => {
 };
 
 const createShift = async shift => {
-  console.log(shift);
   return await db.collection("shifts").add(shift);
 };
 
@@ -28,6 +27,7 @@ const getShifts = async uid => {
   const query = await db
     .collection("shifts")
     .where("uid", "==", uid)
+    .orderBy("date", "desc")
     .get();
   return query.docs.map(doc => doc.data());
 };
@@ -36,6 +36,7 @@ const getAllEmployeesShifts = async () => {
   const shifts = [];
   await db
     .collection("shifts")
+    .orderBy("date", "desc")
     .get()
     .then(snapshot => {
       snapshot.forEach(doc => shifts.push(doc.data()));

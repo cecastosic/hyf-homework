@@ -4,8 +4,7 @@ import firebase from "./../../helpers/firebase";
 function GoogleOAuth() {
   return (
     <div>
-      <button onClick={() => firebase.signInGoogle()}>
-        Sign in with Google
+      <button className="sign-in-google" onClick={() => firebase.signInGoogle()}>
       </button>
     </div>
   );

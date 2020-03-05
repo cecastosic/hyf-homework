@@ -19,6 +19,12 @@ const {
 } = require("./database");
 const decodeToken = require("./helpers/authHelper");
 
+// app.get("/", (req, res) => {
+//   // build folder should be in the admin folder
+//   //res.send(); send html from build
+//   //res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
+
 app.get("/auth", async (req, res) => {
   try {
     const result = await decodeToken(req);
@@ -30,14 +36,14 @@ app.get("/auth", async (req, res) => {
   }
 });
 
-app.post("/shifts", async (req, res) => {
+app.post("/api/shifts", async (req, res) => {
   const result = await decodeToken(req);
 
   createShift({ ...req.body, uid: result.uid });
   res.json({ message: "Added to DB" });
 });
 
-app.get("/shifts", async (req, res) => {
+app.get("/api/shifts", async (req, res) => {
   const result = await decodeToken(req);
   const { userType } = await getUserType(result.uid);
   const dataAllShifts = await getAllEmployeesShifts();
