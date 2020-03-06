@@ -19,11 +19,8 @@ const {
 } = require("./database");
 const decodeToken = require("./helpers/authHelper");
 
-// app.get("/", (req, res) => {
-//   // build folder should be in the admin folder
-//   //res.send(); send html from build
-//   //res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, "./../../react/build")));
 
 app.get("/auth", async (req, res) => {
   try {
@@ -52,6 +49,11 @@ app.get("/api/shifts", async (req, res) => {
     if (userType === "employer") res.json(dataAllShifts);
     else res.json(dataUserShifts);
   }
+});
+
+// Handles any requests that don't match the ones above
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname, "./../../react/build", "index.html"));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

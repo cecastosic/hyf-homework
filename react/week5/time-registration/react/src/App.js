@@ -17,7 +17,7 @@ function App() {
       authorization: `Bearer ${token}`
     };
 
-    return await fetch("http://localhost:5000/auth", {
+    return await fetch("/auth", {
       headers: header,
       method: "GET"
     })
