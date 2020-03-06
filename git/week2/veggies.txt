@@ -1,5 +1,7 @@
 onion
 pumpkin
-cucumber
+tomato
 kale
 pepper
+potato
+spinach
