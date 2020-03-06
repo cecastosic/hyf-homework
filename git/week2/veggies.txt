@@ -1,0 +1,10 @@
+onion
+pumpkin
+tomato
+kale
+pepper
+potato
+spinach
+zucchini
+kale
+pepper
