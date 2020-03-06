@@ -5,3 +5,6 @@ kale
 pepper
 potato
 spinach
+zucchini
+kale
+pepper
