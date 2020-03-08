@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live preview: https://shifts-manager-app.herokuapp.com/ 🚀
 
 # Credentials for Shift manager app
 
@@ -13,6 +13,8 @@ ceca@google.dk
 ceca2@google.dk
 123456
 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
